@@ -130,7 +130,7 @@ const Menu = () => {
           <button
             data-collapse-toggle="navbar-user"
             type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-orange"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-orange rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-orange"
             aria-controls="navbar-user"
             aria-expanded={isMenuOpen}
             onClick={toggleMenu}
@@ -140,11 +140,15 @@ const Menu = () => {
               <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
             </svg>
           </button>
+
+          
         </div>
 
         {/* Enlaces del menú */}
         <div
-          className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${isMenuOpen ? 'block' : 'hidden'}`}
+          className={`absolute top-0 left-0 w-full h-auto bg-white shadow-lg transition-transform transform ${
+            isMenuOpen ? 'translate-y-0 z-50' : '-translate-y-full'
+          } md:relative md:translate-y-0 md:h-auto md:w-auto md:bg-transparent md:shadow-none`}
           id="navbar-user"
         >
           <ul className="flex flex-col font-BeVietnamPro p-4 md:p-0 mt-4 border border-lightGreen rounded-lg bg-lightBeige md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent">
@@ -191,7 +195,7 @@ const Menu = () => {
                 className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro ${location.pathname === '/panel-administrativo' ? 'text-orange' : 'text-darkBlue hover:text-orange'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Panel Administrativo
+                Panel Administrativoo
               </Link>
             </li>
           </ul>
