@@ -11,6 +11,7 @@ export default {
       lightGreen: "#9ACD32",
       lightBeige: "#F5F5DC",
       darkBlue: "#00008B",
+      lightBlue: "#002847",
       orange: "#fa4616;",
       gray:{
         50: "#f9fafb",
