@@ -7,7 +7,7 @@ const Menu = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Simulación de autenticación
-  const dropdownRef = useRef(null);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
 
   // Toggle del menú hamburguesa
   const toggleMenu = () => {
@@ -21,8 +21,9 @@ const Menu = () => {
 
   // Cerrar el dropdown al hacer clic fuera
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+      const target = event.target as Node | null; // Asegura que event.target es un Node
+      if (dropdownRef.current && target && !dropdownRef.current.contains(target)) {
         setIsDropdownOpen(false);
       }
     };
@@ -44,7 +45,7 @@ const Menu = () => {
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         {/* Logotipo */}
         <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="/images/logoSpc.png" className="h-10" alt="Secretos para Contar Logo" />
+          <img src="/images/logoSpc.png" className="h-12" alt="Secretos para Contar Logo" />
         </Link>
 
         {/* Menú hamburguesa y ícono de perfil */}
