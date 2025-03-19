@@ -1,10 +1,41 @@
+using Microsoft.EntityFrameworkCore;
+using VirtualBiblio.Data;
+using VirtualBiblio.Data.Repositories;
+using VirtualBiblio.Business.Services;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Agregar la conexión a PostgreSQL
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(
+        builder.Configuration.GetConnectionString("PostgresConnection"),
+        b => b.MigrationsAssembly("VirtualBiblio.Data") // 👈 Esto soluciona el problema
+    )
+);
+
+
+// Registrar dependencias
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddScoped<UsuarioService>();
+
+// Configurar controladores
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+var app = builder.Build();
+
+app.UseSwagger();
+app.UseSwaggerUI();
+
+app.UseAuthorization();
+app.MapControllers();
+app.Run();
+
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
-
-var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
