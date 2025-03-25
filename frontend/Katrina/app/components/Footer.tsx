@@ -5,11 +5,22 @@ const Footer = () => {
         <div className="flex flex-col items-center space-y-4">
           <img src="/images/logocua.png" alt="Logo" className="w-48" />
           <div className="flex space-x-7">
-            <img src="/images/instagram.png" alt="Instagram" className="w-6" />
-            <img src="/images/facebook.png" alt="Facebook" className="w-6" />
-            <img src="/images/tik-tok.png" alt="TikTok" className="w-6" />
-            <img src="/images/youtube.png" alt="YouTube" className="w-6" />
-          </div>
+            <a href="https://www.instagram.com/secretosparacontar/" target="_blank" rel="noopener noreferrer">
+                <img src="/images/instagram.png" alt="Instagram" className="w-6 hover:opacity-80 transition-opacity" />
+            </a>
+            <a href="https://www.facebook.com/secretosparacontar" target="_blank" rel="noopener noreferrer">
+                <img src="/images/facebook.png" alt="Facebook" className="w-6 hover:opacity-80 transition-opacity" />
+            </a>
+            <a href="https://www.linkedin.com/company/fundacionsecretosparacontar/" target="_blank" rel="noopener noreferrer">
+                <img src="/images/linkedin.svg" alt="TikTok" className="w-6 hover:opacity-80 transition-opacity" />
+            </a>
+            <a href="https://www.youtube.com/user/fundasecretos" target="_blank" rel="noopener noreferrer">
+                <img src="/images/youtube.png" alt="YouTube" className="w-6 hover:opacity-80 transition-opacity" />
+            </a>
+            <a href="https://x.com/Secretoscontar" target="_blank" rel="noopener noreferrer">
+                <img src="/images/twitter-x.svg" alt="YouTube" className="w-5 hover:opacity-80 transition-opacity" />
+            </a>
+            </div>
         </div>
 
         {/* Enlaces */}
