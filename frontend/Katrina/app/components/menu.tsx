@@ -45,7 +45,7 @@ const Menu = () => {
       {/* Línea superior pequeña */}
       <div className="h-8 w-full bg-[#002847]"></div>
 
-      <div className="bg-[#618EB4] max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-8">
+      <div className="bg-[#618EB4] w-full flex flex-wrap items-center justify-between mx-auto p-8">
         {/* Logotipo */}
         <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img src="/images/logoSpc.png" className="h-12" alt="Secretos para Contar Logo" />
