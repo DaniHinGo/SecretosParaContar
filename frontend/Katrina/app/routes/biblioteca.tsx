@@ -1,34 +1,31 @@
-// filepath: c:\secretosParaContar\frontend\Katrina\app\routes\biblioteca.tsx
 import React from 'react';
 
 const libros = [
   { id: 1, titulo: "El Principito", imagen: "/images/principito.jpg" },
-  { id: 2, titulo: "autum", imagen: "/images/autum.png" },
-  { id: 3, titulo: "El Gato con botas", imagen: "/images/gato.jpg" },
-  { id: 4, titulo: "Pedro el gato de pie", imagen: "/images/pedro.png" },
+  { id: 2, titulo: "Autum", imagen: "/images/autum.png" },
+  { id: 3, titulo: "El Gato con Botas", imagen: "/images/gato.jpg" },
+  { id: 4, titulo: "Pedro el Gato de Pie", imagen: "/images/pedro.png" },
+  { id: 5, titulo: "Los vertidos de mamá", imagen: "/images/vestidos.jpg" },
+  { id: 6, titulo: "Harry Potter y la piedra filosofal", imagen: "/images/harry.jpg" },
 ];
 
 export default function Biblioteca() {
   return (
-    <div className="container mx-auto p-6">
-      <h1 className="text-4xl font-bold text-center mb-6">Biblioteca</h1>
-      <p className="text-lg text-center mb-8 text-gray-600">
-        Explora nuestra colección de libros.
-      </p>
-
-      {/* Grid de libros */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <section className="bg-[#F8F8F8] py-12 text-center">
+      <h2 className="text-[#FA4616] text-2xl font-bold">Biblioteca</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto mt-6">
         {libros.map((libro) => (
-          <div key={libro.id} className="bg-white rounded-lg shadow-lg p-4 text-center">
+          <div key={libro.id} className="bg-white p-6 shadow-md rounded-lg h-full flex flex-col justify-between">
             <img 
               src={libro.imagen} 
               alt={libro.titulo} 
-              className="w-full h-48 object-cover rounded-md mb-4"
+              className="w-full h-56 object-contain bg-white p-2 rounded"
             />
-            <h2 className="text-xl font-semibold">{libro.titulo}</h2>
+            <p className="text-[#FA4616] font-bold mt-2 flex-grow">{libro.titulo}</p>
+            <a href="#" className="text-blue-500 mt-2 block">Ver más...</a>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
