@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Agregar contexto de base de datos con PostgreSQL
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("PostgresConnection")));
 
 // Agregar UnitOfWork y servicios
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
