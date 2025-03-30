@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VirtualBiblio.Business")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+19c859638a6dc3893b96fc7ec743f6c0b237a42a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+802264790ffa25b1822d0d6a0e0de22571981589")]
 [assembly: System.Reflection.AssemblyProductAttribute("VirtualBiblio.Business")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VirtualBiblio.Business")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
