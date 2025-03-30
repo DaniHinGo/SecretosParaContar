@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VirtualBiblio.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f1fef266affdf27cdf051628dd454813ea93d829")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+19c859638a6dc3893b96fc7ec743f6c0b237a42a")]
 [assembly: System.Reflection.AssemblyProductAttribute("VirtualBiblio.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VirtualBiblio.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
