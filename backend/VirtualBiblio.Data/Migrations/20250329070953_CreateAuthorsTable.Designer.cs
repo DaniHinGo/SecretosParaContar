@@ -11,7 +11,7 @@ using VirtualBiblio.Data;
 namespace VirtualBiblio.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250327060007_CreateAuthorsTable")]
+    [Migration("20250329070953_CreateAuthorsTable")]
     partial class CreateAuthorsTable
     {
         /// <inheritdoc />

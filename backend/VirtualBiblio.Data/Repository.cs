@@ -5,43 +5,48 @@ namespace VirtualBiblio.Data
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        private readonly ApplicationDbContext _context;
-        private readonly DbSet<T> _dbSet;
+        protected readonly ApplicationDbContext _context;
 
         public Repository(ApplicationDbContext context)
         {
             _context = context;
-            _dbSet = context.Set<T>();
         }
 
-        public T GetById(int id)
+        public async Task<T> GetByIdAsync(int id)
         {
-            return _dbSet.Find(id);
+            return await _context.Set<T>().FindAsync(id);
         }
 
-        public IEnumerable<T> GetAll()
+        public async Task<IEnumerable<T>> GetAll()
         {
-            return _dbSet.ToList();
+            return await _context.Set<T>().ToListAsync();
         }
 
-        public IEnumerable<T> Find(Expression<Func<T, bool>> predicate)
+        // Nuevo método Find
+        public async Task<T> Find(Expression<Func<T, bool>> predicate)
         {
-            return _dbSet.Where(predicate).ToList();
+            return await _context.Set<T>().FirstOrDefaultAsync(predicate);
         }
 
         public void Add(T entity)
         {
-            _dbSet.Add(entity);
+            _context.Set<T>().Add(entity);
         }
 
         public void Update(T entity)
         {
-            _dbSet.Update(entity);
+            _context.Set<T>().Update(entity);
         }
 
+        public void Delete(T entity)
+        {
+            _context.Set<T>().Remove(entity);
+        }
+
+        // Agregar el método Remove para que coincida con la interfaz
         public void Remove(T entity)
         {
-            _dbSet.Remove(entity);
+            _context.Set<T>().Remove(entity);
         }
     }
 }

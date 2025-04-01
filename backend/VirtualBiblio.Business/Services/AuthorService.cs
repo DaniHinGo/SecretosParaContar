@@ -1,6 +1,7 @@
 using VirtualBiblio.Data;
 using VirtualBiblio.Data.Models;
 using VirtualBiblio.Business.Interfaces;
+using System.Linq;
 
 namespace VirtualBiblio.Business.Services
 {
@@ -22,7 +23,7 @@ namespace VirtualBiblio.Business.Services
 
         public async Task<Author> UpdateAuthorAsync(int id, Author author)
         {
-            var existingAuthor = _unitOfWork.Authors.GetById(id);
+            var existingAuthor = await _unitOfWork.Authors.GetByIdAsync(id); // Cambia "GetById" a "GetByIdAsync" y usa await
             if (existingAuthor == null) throw new Exception("Autor no encontrado");
 
             existingAuthor.FirstName = author.FirstName;
@@ -40,7 +41,7 @@ namespace VirtualBiblio.Business.Services
 
         public async Task DeactivateAuthorAsync(int id)
         {
-            var author = _unitOfWork.Authors.GetById(id);
+            var author = await _unitOfWork.Authors.GetByIdAsync(id); // Cambia "GetById" a "GetByIdAsync" y usa await
             if (author == null) throw new Exception("Autor no encontrado");
             author.IsAlive = false;
             _unitOfWork.Authors.Update(author);
@@ -51,24 +52,25 @@ namespace VirtualBiblio.Business.Services
             string gender = null, int? birthYear = null, string nationality = null, 
             string language = null, bool? isAlive = null)
         {
-            var authors = _unitOfWork.Authors.GetAll().AsQueryable();
+            var authors = await _unitOfWork.Authors.GetAll(); // Usa await para obtener el IEnumerable<Author>
+            var query = authors.AsQueryable();
 
             if (!string.IsNullOrEmpty(firstName))
-                authors = authors.Where(a => a.FirstName.Contains(firstName));
+                query = query.Where(a => a.FirstName.Contains(firstName));
             if (!string.IsNullOrEmpty(lastName))
-                authors = authors.Where(a => a.LastName.Contains(lastName));
+                query = query.Where(a => a.LastName.Contains(lastName));
             if (!string.IsNullOrEmpty(gender))
-                authors = authors.Where(a => a.Gender == gender);
+                query = query.Where(a => a.Gender == gender);
             if (birthYear.HasValue)
-                authors = authors.Where(a => a.BirthYear == birthYear);
+                query = query.Where(a => a.BirthYear == birthYear);
             if (!string.IsNullOrEmpty(nationality))
-                authors = authors.Where(a => a.Nationality == nationality);
+                query = query.Where(a => a.Nationality == nationality);
             if (!string.IsNullOrEmpty(language))
-                authors = authors.Where(a => a.Language == language);
+                query = query.Where(a => a.Language == language);
             if (isAlive.HasValue)
-                authors = authors.Where(a => a.IsAlive == isAlive);
+                query = query.Where(a => a.IsAlive == isAlive);
 
-            return authors.ToList();
+            return query.ToList();
         }
     }
 }

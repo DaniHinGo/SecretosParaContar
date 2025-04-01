@@ -709,11 +709,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Documentos\\SECRETOSPARACONTAR\\backend\\VirtualBiblio.Business\\VirtualBiblio.Business.csproj",
+      "projectUniqueName": "D:\\Documentos\\SecretosParaContar\\backend\\VirtualBiblio.Business\\VirtualBiblio.Business.csproj",
       "projectName": "VirtualBiblio.Business",
-      "projectPath": "D:\\Documentos\\SECRETOSPARACONTAR\\backend\\VirtualBiblio.Business\\VirtualBiblio.Business.csproj",
+      "projectPath": "D:\\Documentos\\SecretosParaContar\\backend\\VirtualBiblio.Business\\VirtualBiblio.Business.csproj",
       "packagesPath": "C:\\Users\\DaniHinGo\\.nuget\\packages\\",
-      "outputPath": "D:\\Documentos\\SECRETOSPARACONTAR\\backend\\VirtualBiblio.Business\\obj\\",
+      "outputPath": "D:\\Documentos\\SecretosParaContar\\backend\\VirtualBiblio.Business\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\DaniHinGo\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -728,8 +728,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "D:\\Documentos\\SECRETOSPARACONTAR\\backend\\VirtualBiblio.Data\\VirtualBiblio.Data.csproj": {
-              "projectPath": "D:\\Documentos\\SECRETOSPARACONTAR\\backend\\VirtualBiblio.Data\\VirtualBiblio.Data.csproj"
+            "D:\\Documentos\\SecretosParaContar\\backend\\VirtualBiblio.Data\\VirtualBiblio.Data.csproj": {
+              "projectPath": "D:\\Documentos\\SecretosParaContar\\backend\\VirtualBiblio.Data\\VirtualBiblio.Data.csproj"
             }
           }
         }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documentos\\SECRETOSPARACONTAR\\backend\\VirtualBiblio.Data\\VirtualBiblio.Data.csproj": {}
+    "D:\\Documentos\\SecretosParaContar\\backend\\VirtualBiblio.Data\\VirtualBiblio.Data.csproj": {}
   },
   "projects": {
-    "D:\\Documentos\\SECRETOSPARACONTAR\\backend\\VirtualBiblio.Data\\VirtualBiblio.Data.csproj": {
+    "D:\\Documentos\\SecretosParaContar\\backend\\VirtualBiblio.Data\\VirtualBiblio.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documentos\\SECRETOSPARACONTAR\\backend\\VirtualBiblio.Data\\VirtualBiblio.Data.csproj",
+        "projectUniqueName": "D:\\Documentos\\SecretosParaContar\\backend\\VirtualBiblio.Data\\VirtualBiblio.Data.csproj",
         "projectName": "VirtualBiblio.Data",
-        "projectPath": "D:\\Documentos\\SECRETOSPARACONTAR\\backend\\VirtualBiblio.Data\\VirtualBiblio.Data.csproj",
+        "projectPath": "D:\\Documentos\\SecretosParaContar\\backend\\VirtualBiblio.Data\\VirtualBiblio.Data.csproj",
         "packagesPath": "C:\\Users\\DaniHinGo\\.nuget\\packages\\",
-        "outputPath": "D:\\Documentos\\SECRETOSPARACONTAR\\backend\\VirtualBiblio.Data\\obj\\",
+        "outputPath": "D:\\Documentos\\SecretosParaContar\\backend\\VirtualBiblio.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DaniHinGo\\AppData\\Roaming\\NuGet\\NuGet.Config"

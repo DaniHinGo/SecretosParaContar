@@ -4,11 +4,11 @@ namespace VirtualBiblio.Data
 {
     public interface IRepository<T> where T : class
     {
-        T GetById(int id);
-        IEnumerable<T> GetAll();
-        IEnumerable<T> Find(Expression<Func<T, bool>> predicate);
+        Task<T> GetByIdAsync(int id);
+        Task<IEnumerable<T>> GetAll();
+        Task<T> Find(Expression<Func<T, bool>> predicate); // Método que falta
         void Add(T entity);
         void Update(T entity);
-        void Remove(T entity);
+        void Remove(T entity); // Método que falta (tienes "Delete" en su lugar)
     }
 }

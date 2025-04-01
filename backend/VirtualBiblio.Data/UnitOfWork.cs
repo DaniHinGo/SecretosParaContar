@@ -1,3 +1,5 @@
+using VirtualBiblio.Data.Models;
+
 namespace VirtualBiblio.Data
 {
     public class UnitOfWork : IUnitOfWork
@@ -8,6 +10,7 @@ namespace VirtualBiblio.Data
         public UnitOfWork(ApplicationDbContext context)
         {
             _context = context;
+            _authors = new Repository<Author>(context); // Inicializar en el constructor
         }
 
         public IRepository<Models.Author> Authors

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dxx0DgqW3Jg=",
+  "dgSpecHash": "938WjbOkjcQ=",
   "success": true,
-  "projectFilePath": "D:\\Documentos\\SECRETOSPARACONTAR\\backend\\virtualBiblio\\VirtualBiblio.csproj",
+  "projectFilePath": "D:\\Documentos\\SecretosParaContar\\backend\\VirtualBiblio\\VirtualBiblio.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DaniHinGo\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\DaniHinGo\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\9.0.2\\microsoft.aspnetcore.jsonpatch.9.0.2.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iIhYVGcFeBI=",
+  "dgSpecHash": "aCtbc/R63dg=",
   "success": true,
-  "projectFilePath": "D:\\Documentos\\SECRETOSPARACONTAR\\backend\\VirtualBiblio.Business\\VirtualBiblio.Business.csproj",
+  "projectFilePath": "D:\\Documentos\\SecretosParaContar\\backend\\VirtualBiblio.Business\\VirtualBiblio.Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DaniHinGo\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.3\\microsoft.entityframeworkcore.9.0.3.nupkg.sha512",
     "C:\\Users\\DaniHinGo\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.3\\microsoft.entityframeworkcore.abstractions.9.0.3.nupkg.sha512",

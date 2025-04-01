@@ -1,0 +1,23 @@
+meta {
+  name: CrearAutor
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:5084/api/authors
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "firstName": "Gabriel",
+    "lastName": "García Márquez",
+    "gender": "Masculino",
+    "birthYear": 1927,
+    "nationality": "Colombiano",
+    "language": "Español",
+    "isAlive": false
+  }
+}

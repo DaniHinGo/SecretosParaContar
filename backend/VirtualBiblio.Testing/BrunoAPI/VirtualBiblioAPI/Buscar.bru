@@ -1,0 +1,16 @@
+meta {
+  name: Buscar
+  type: http
+  seq: 3
+}
+
+get {
+  url: http://localhost:5084/api/authors?nationality=Colombiano&isAlive=false
+  body: none
+  auth: inherit
+}
+
+params:query {
+  nationality: Colombiano
+  isAlive: false
+}
