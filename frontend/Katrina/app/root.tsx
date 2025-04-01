@@ -9,6 +9,7 @@ import type { LinksFunction } from "@remix-run/node";
 
 import "./tailwind.css";
 import Menu from "./components/menu";
+import Footer from "./components/Footer";
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -37,7 +38,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <Menu />
         {children}
         <ScrollRestoration />
         <Scripts />
@@ -46,6 +46,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function App() {
-  return <Outlet />;
+export default function Root() {
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Menu />
+      
+      <main className="flex-grow">
+        <Outlet /> {/* Aquí se renderizan las diferentes páginas */}
+      </main>
+
+      <Footer /> {/* Footer fijo en todas las páginas */}
+    </div>
+  );
 }

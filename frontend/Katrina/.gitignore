@@ -4,3 +4,6 @@ node_modules
 /build
 .env
 
+# Ignorar carpetas generadas por .NET
+**/obj/
+**/bin/
