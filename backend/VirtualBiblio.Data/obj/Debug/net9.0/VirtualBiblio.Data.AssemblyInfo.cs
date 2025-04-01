@@ -13,11 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VirtualBiblio.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4cb119d10e49af1adf0f4338083556e3b3f24b57")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+01d29ae7b2fc8e2ba2d3138fceb366c909c0f8e6")]
->>>>>>> 1f8167d7 (actualizando rama)
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b93f4188a5917474f5792818773ab396a24f7cf7")]
 [assembly: System.Reflection.AssemblyProductAttribute("VirtualBiblio.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VirtualBiblio.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

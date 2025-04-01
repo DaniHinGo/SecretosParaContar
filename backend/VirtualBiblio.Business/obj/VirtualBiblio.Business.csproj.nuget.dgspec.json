@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "D:\\Documentos\\SecretosParaContar\\backend\\VirtualBiblio.Business\\VirtualBiblio.Business.csproj": {}
   },
   "projects": {
@@ -76,19 +75,6 @@
         "projectPath": "D:\\Documentos\\SecretosParaContar\\backend\\VirtualBiblio.Data\\VirtualBiblio.Data.csproj",
         "packagesPath": "C:\\Users\\DaniHinGo\\.nuget\\packages\\",
         "outputPath": "D:\\Documentos\\SecretosParaContar\\backend\\VirtualBiblio.Data\\obj\\",
-=======
-    "D:\\Documentos\\secretosparacontar\\backend\\VirtualBiblio.Business\\VirtualBiblio.Business.csproj": {}
-  },
-  "projects": {
-    "D:\\Documentos\\secretosparacontar\\backend\\VirtualBiblio.Business\\VirtualBiblio.Business.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\Documentos\\secretosparacontar\\backend\\VirtualBiblio.Business\\VirtualBiblio.Business.csproj",
-        "projectName": "VirtualBiblio.Business",
-        "projectPath": "D:\\Documentos\\secretosparacontar\\backend\\VirtualBiblio.Business\\VirtualBiblio.Business.csproj",
-        "packagesPath": "C:\\Users\\DaniHinGo\\.nuget\\packages\\",
-        "outputPath": "D:\\Documentos\\secretosparacontar\\backend\\VirtualBiblio.Business\\obj\\",
->>>>>>> 1f8167d7 (actualizando rama)
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DaniHinGo\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -120,7 +106,6 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-<<<<<<< HEAD
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -137,8 +122,6 @@
               "version": "[9.0.3, )"
             }
           },
-=======
->>>>>>> 1f8167d7 (actualizando rama)
           "imports": [
             "net461",
             "net462",

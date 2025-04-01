@@ -5,11 +5,7 @@
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
-<<<<<<< HEAD
           "lib/net6.0/_._": {
-=======
-          "lib/net6.0/Humanizer.dll": {
->>>>>>> 1f8167d7 (actualizando rama)
             "related": ".xml"
           }
         },
@@ -22,11 +18,7 @@
       "Microsoft.Bcl.AsyncInterfaces/7.0.0": {
         "type": "package",
         "compile": {
-<<<<<<< HEAD
           "lib/netstandard2.1/_._": {
-=======
-          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
->>>>>>> 1f8167d7 (actualizando rama)
             "related": ".xml"
           }
         },
@@ -39,11 +31,7 @@
       "Microsoft.Build.Framework/17.8.3": {
         "type": "package",
         "compile": {
-<<<<<<< HEAD
           "ref/net8.0/_._": {
-=======
-          "ref/net8.0/Microsoft.Build.Framework.dll": {
->>>>>>> 1f8167d7 (actualizando rama)
             "related": ".xml"
           }
         },
@@ -56,11 +44,7 @@
       "Microsoft.Build.Locator/1.7.8": {
         "type": "package",
         "compile": {
-<<<<<<< HEAD
           "lib/net6.0/_._": {}
-=======
-          "lib/net6.0/Microsoft.Build.Locator.dll": {}
->>>>>>> 1f8167d7 (actualizando rama)
         },
         "runtime": {
           "lib/net6.0/Microsoft.Build.Locator.dll": {}
@@ -85,11 +69,7 @@
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         },
         "compile": {
-<<<<<<< HEAD
           "lib/net7.0/_._": {
-=======
-          "lib/net7.0/Microsoft.CodeAnalysis.dll": {
->>>>>>> 1f8167d7 (actualizando rama)
             "related": ".pdb;.xml"
           }
         },
@@ -146,11 +126,7 @@
           "Microsoft.CodeAnalysis.Common": "[4.8.0]"
         },
         "compile": {
-<<<<<<< HEAD
           "lib/net7.0/_._": {
-=======
-          "lib/net7.0/Microsoft.CodeAnalysis.CSharp.dll": {
->>>>>>> 1f8167d7 (actualizando rama)
             "related": ".pdb;.xml"
           }
         },
@@ -210,11 +186,7 @@
           "Microsoft.CodeAnalysis.Workspaces.Common": "[4.8.0]"
         },
         "compile": {
-<<<<<<< HEAD
           "lib/net7.0/_._": {
-=======
-          "lib/net7.0/Microsoft.CodeAnalysis.CSharp.Workspaces.dll": {
->>>>>>> 1f8167d7 (actualizando rama)
             "related": ".pdb;.xml"
           }
         },
@@ -276,11 +248,7 @@
           "System.Threading.Channels": "7.0.0"
         },
         "compile": {
-<<<<<<< HEAD
           "lib/net7.0/_._": {
-=======
-          "lib/net7.0/Microsoft.CodeAnalysis.Workspaces.dll": {
->>>>>>> 1f8167d7 (actualizando rama)
             "related": ".pdb;.xml"
           }
         },
@@ -340,16 +308,8 @@
           "System.Text.Json": "7.0.3"
         },
         "compile": {
-<<<<<<< HEAD
           "lib/net7.0/_._": {
             "related": ".pdb;.runtimeconfig.json;.xml"
-=======
-          "lib/net7.0/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll": {
-            "related": ".pdb;.runtimeconfig.json;.xml"
-          },
-          "lib/net7.0/Microsoft.CodeAnalysis.Workspaces.MSBuild.dll": {
-            "related": ".BuildHost.pdb;.BuildHost.runtimeconfig.json;.BuildHost.xml;.pdb;.xml"
->>>>>>> 1f8167d7 (actualizando rama)
           }
         },
         "runtime": {
@@ -402,7 +362,6 @@
           }
         }
       },
-<<<<<<< HEAD
       "Microsoft.EntityFrameworkCore/9.0.3": {
         "type": "package",
         "dependencies": {
@@ -410,15 +369,6 @@
           "Microsoft.EntityFrameworkCore.Analyzers": "9.0.3",
           "Microsoft.Extensions.Caching.Memory": "9.0.3",
           "Microsoft.Extensions.Logging": "9.0.3"
-=======
-      "Microsoft.EntityFrameworkCore/9.0.2": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "9.0.2",
-          "Microsoft.EntityFrameworkCore.Analyzers": "9.0.2",
-          "Microsoft.Extensions.Caching.Memory": "9.0.2",
-          "Microsoft.Extensions.Logging": "9.0.2"
->>>>>>> 1f8167d7 (actualizando rama)
         },
         "compile": {
           "lib/net8.0/Microsoft.EntityFrameworkCore.dll": {
@@ -434,11 +384,7 @@
           "buildTransitive/net8.0/Microsoft.EntityFrameworkCore.props": {}
         }
       },
-<<<<<<< HEAD
       "Microsoft.EntityFrameworkCore.Abstractions/9.0.3": {
-=======
-      "Microsoft.EntityFrameworkCore.Abstractions/9.0.2": {
->>>>>>> 1f8167d7 (actualizando rama)
         "type": "package",
         "compile": {
           "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
@@ -451,17 +397,10 @@
           }
         }
       },
-<<<<<<< HEAD
       "Microsoft.EntityFrameworkCore.Analyzers/9.0.3": {
         "type": "package"
       },
       "Microsoft.EntityFrameworkCore.Design/9.0.3": {
-=======
-      "Microsoft.EntityFrameworkCore.Analyzers/9.0.2": {
-        "type": "package"
-      },
-      "Microsoft.EntityFrameworkCore.Design/9.0.2": {
->>>>>>> 1f8167d7 (actualizando rama)
         "type": "package",
         "dependencies": {
           "Humanizer.Core": "2.14.1",
@@ -470,7 +409,6 @@
           "Microsoft.CodeAnalysis.CSharp": "4.8.0",
           "Microsoft.CodeAnalysis.CSharp.Workspaces": "4.8.0",
           "Microsoft.CodeAnalysis.Workspaces.MSBuild": "4.8.0",
-<<<<<<< HEAD
           "Microsoft.EntityFrameworkCore.Relational": "9.0.3",
           "Microsoft.Extensions.Caching.Memory": "9.0.3",
           "Microsoft.Extensions.Configuration.Abstractions": "9.0.3",
@@ -481,18 +419,6 @@
         },
         "compile": {
           "lib/net8.0/_._": {
-=======
-          "Microsoft.EntityFrameworkCore.Relational": "9.0.2",
-          "Microsoft.Extensions.Caching.Memory": "9.0.2",
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.2",
-          "Microsoft.Extensions.DependencyModel": "9.0.2",
-          "Microsoft.Extensions.Logging": "9.0.2",
-          "Mono.TextTemplating": "3.0.0",
-          "System.Text.Json": "9.0.2"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.Design.dll": {
->>>>>>> 1f8167d7 (actualizando rama)
             "related": ".xml"
           }
         },
@@ -505,7 +431,6 @@
           "build/net8.0/Microsoft.EntityFrameworkCore.Design.props": {}
         }
       },
-<<<<<<< HEAD
       "Microsoft.EntityFrameworkCore.Relational/9.0.3": {
         "type": "package",
         "dependencies": {
@@ -513,15 +438,6 @@
           "Microsoft.Extensions.Caching.Memory": "9.0.3",
           "Microsoft.Extensions.Configuration.Abstractions": "9.0.3",
           "Microsoft.Extensions.Logging": "9.0.3"
-=======
-      "Microsoft.EntityFrameworkCore.Relational/9.0.2": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "9.0.2",
-          "Microsoft.Extensions.Caching.Memory": "9.0.2",
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.2",
-          "Microsoft.Extensions.Logging": "9.0.2"
->>>>>>> 1f8167d7 (actualizando rama)
         },
         "compile": {
           "lib/net8.0/Microsoft.EntityFrameworkCore.Relational.dll": {
@@ -534,17 +450,10 @@
           }
         }
       },
-<<<<<<< HEAD
       "Microsoft.Extensions.Caching.Abstractions/9.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Primitives": "9.0.3"
-=======
-      "Microsoft.Extensions.Caching.Abstractions/9.0.2": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Primitives": "9.0.2"
->>>>>>> 1f8167d7 (actualizando rama)
         },
         "compile": {
           "lib/net9.0/Microsoft.Extensions.Caching.Abstractions.dll": {
@@ -560,7 +469,6 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-<<<<<<< HEAD
       "Microsoft.Extensions.Caching.Memory/9.0.3": {
         "type": "package",
         "dependencies": {
@@ -569,16 +477,6 @@
           "Microsoft.Extensions.Logging.Abstractions": "9.0.3",
           "Microsoft.Extensions.Options": "9.0.3",
           "Microsoft.Extensions.Primitives": "9.0.3"
-=======
-      "Microsoft.Extensions.Caching.Memory/9.0.2": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Caching.Abstractions": "9.0.2",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.2",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.2",
-          "Microsoft.Extensions.Options": "9.0.2",
-          "Microsoft.Extensions.Primitives": "9.0.2"
->>>>>>> 1f8167d7 (actualizando rama)
         },
         "compile": {
           "lib/net9.0/Microsoft.Extensions.Caching.Memory.dll": {
@@ -594,17 +492,10 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-<<<<<<< HEAD
       "Microsoft.Extensions.Configuration.Abstractions/9.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Primitives": "9.0.3"
-=======
-      "Microsoft.Extensions.Configuration.Abstractions/9.0.2": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Primitives": "9.0.2"
->>>>>>> 1f8167d7 (actualizando rama)
         },
         "compile": {
           "lib/net9.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
@@ -620,17 +511,10 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-<<<<<<< HEAD
       "Microsoft.Extensions.DependencyInjection/9.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.3"
-=======
-      "Microsoft.Extensions.DependencyInjection/9.0.2": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.2"
->>>>>>> 1f8167d7 (actualizando rama)
         },
         "compile": {
           "lib/net9.0/Microsoft.Extensions.DependencyInjection.dll": {
@@ -646,11 +530,7 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-<<<<<<< HEAD
       "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.3": {
-=======
-      "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.2": {
->>>>>>> 1f8167d7 (actualizando rama)
         "type": "package",
         "compile": {
           "lib/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
@@ -666,17 +546,10 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-<<<<<<< HEAD
       "Microsoft.Extensions.DependencyModel/9.0.3": {
         "type": "package",
         "compile": {
           "lib/net9.0/_._": {
-=======
-      "Microsoft.Extensions.DependencyModel/9.0.2": {
-        "type": "package",
-        "compile": {
-          "lib/net9.0/Microsoft.Extensions.DependencyModel.dll": {
->>>>>>> 1f8167d7 (actualizando rama)
             "related": ".xml"
           }
         },
@@ -689,21 +562,12 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-<<<<<<< HEAD
       "Microsoft.Extensions.Logging/9.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "9.0.3",
           "Microsoft.Extensions.Logging.Abstractions": "9.0.3",
           "Microsoft.Extensions.Options": "9.0.3"
-=======
-      "Microsoft.Extensions.Logging/9.0.2": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection": "9.0.2",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.2",
-          "Microsoft.Extensions.Options": "9.0.2"
->>>>>>> 1f8167d7 (actualizando rama)
         },
         "compile": {
           "lib/net9.0/Microsoft.Extensions.Logging.dll": {
@@ -719,17 +583,10 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-<<<<<<< HEAD
       "Microsoft.Extensions.Logging.Abstractions/9.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.3"
-=======
-      "Microsoft.Extensions.Logging.Abstractions/9.0.2": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.2"
->>>>>>> 1f8167d7 (actualizando rama)
         },
         "compile": {
           "lib/net9.0/Microsoft.Extensions.Logging.Abstractions.dll": {
@@ -745,19 +602,11 @@
           "buildTransitive/net8.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
         }
       },
-<<<<<<< HEAD
       "Microsoft.Extensions.Options/9.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.3",
           "Microsoft.Extensions.Primitives": "9.0.3"
-=======
-      "Microsoft.Extensions.Options/9.0.2": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.2",
-          "Microsoft.Extensions.Primitives": "9.0.2"
->>>>>>> 1f8167d7 (actualizando rama)
         },
         "compile": {
           "lib/net9.0/Microsoft.Extensions.Options.dll": {
@@ -773,11 +622,7 @@
           "buildTransitive/net8.0/Microsoft.Extensions.Options.targets": {}
         }
       },
-<<<<<<< HEAD
       "Microsoft.Extensions.Primitives/9.0.3": {
-=======
-      "Microsoft.Extensions.Primitives/9.0.2": {
->>>>>>> 1f8167d7 (actualizando rama)
         "type": "package",
         "compile": {
           "lib/net9.0/Microsoft.Extensions.Primitives.dll": {
@@ -799,11 +644,7 @@
           "System.CodeDom": "6.0.0"
         },
         "compile": {
-<<<<<<< HEAD
           "lib/net6.0/_._": {}
-=======
-          "lib/net6.0/Mono.TextTemplating.dll": {}
->>>>>>> 1f8167d7 (actualizando rama)
         },
         "runtime": {
           "lib/net6.0/Mono.TextTemplating.dll": {}
@@ -812,7 +653,6 @@
           "buildTransitive/Mono.TextTemplating.targets": {}
         }
       },
-<<<<<<< HEAD
       "Npgsql/9.0.2": {
         "type": "package",
         "dependencies": {
@@ -851,12 +691,6 @@
         "type": "package",
         "compile": {
           "lib/net6.0/_._": {
-=======
-      "System.CodeDom/6.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/System.CodeDom.dll": {
->>>>>>> 1f8167d7 (actualizando rama)
             "related": ".xml"
           }
         },
@@ -872,11 +706,7 @@
       "System.Collections.Immutable/7.0.0": {
         "type": "package",
         "compile": {
-<<<<<<< HEAD
           "lib/net7.0/_._": {
-=======
-          "lib/net7.0/System.Collections.Immutable.dll": {
->>>>>>> 1f8167d7 (actualizando rama)
             "related": ".xml"
           }
         },
@@ -911,11 +741,7 @@
       "System.Composition.AttributedModel/7.0.0": {
         "type": "package",
         "compile": {
-<<<<<<< HEAD
           "lib/net7.0/_._": {
-=======
-          "lib/net7.0/System.Composition.AttributedModel.dll": {
->>>>>>> 1f8167d7 (actualizando rama)
             "related": ".xml"
           }
         },
@@ -934,11 +760,7 @@
           "System.Composition.AttributedModel": "7.0.0"
         },
         "compile": {
-<<<<<<< HEAD
           "lib/net7.0/_._": {
-=======
-          "lib/net7.0/System.Composition.Convention.dll": {
->>>>>>> 1f8167d7 (actualizando rama)
             "related": ".xml"
           }
         },
@@ -957,11 +779,7 @@
           "System.Composition.Runtime": "7.0.0"
         },
         "compile": {
-<<<<<<< HEAD
           "lib/net7.0/_._": {
-=======
-          "lib/net7.0/System.Composition.Hosting.dll": {
->>>>>>> 1f8167d7 (actualizando rama)
             "related": ".xml"
           }
         },
@@ -977,11 +795,7 @@
       "System.Composition.Runtime/7.0.0": {
         "type": "package",
         "compile": {
-<<<<<<< HEAD
           "lib/net7.0/_._": {
-=======
-          "lib/net7.0/System.Composition.Runtime.dll": {
->>>>>>> 1f8167d7 (actualizando rama)
             "related": ".xml"
           }
         },
@@ -1002,11 +816,7 @@
           "System.Composition.Runtime": "7.0.0"
         },
         "compile": {
-<<<<<<< HEAD
           "lib/net7.0/_._": {
-=======
-          "lib/net7.0/System.Composition.TypedParts.dll": {
->>>>>>> 1f8167d7 (actualizando rama)
             "related": ".xml"
           }
         },
@@ -1022,11 +832,7 @@
       "System.IO.Pipelines/7.0.0": {
         "type": "package",
         "compile": {
-<<<<<<< HEAD
           "lib/net7.0/_._": {
-=======
-          "lib/net7.0/System.IO.Pipelines.dll": {
->>>>>>> 1f8167d7 (actualizando rama)
             "related": ".xml"
           }
         },
@@ -1045,11 +851,7 @@
           "System.Collections.Immutable": "7.0.0"
         },
         "compile": {
-<<<<<<< HEAD
           "lib/net7.0/_._": {
-=======
-          "lib/net7.0/System.Reflection.Metadata.dll": {
->>>>>>> 1f8167d7 (actualizando rama)
             "related": ".xml"
           }
         },
@@ -1065,11 +867,7 @@
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {
         "type": "package",
         "compile": {
-<<<<<<< HEAD
           "lib/net6.0/_._": {
-=======
-          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {
->>>>>>> 1f8167d7 (actualizando rama)
             "related": ".xml"
           }
         },
@@ -1082,17 +880,10 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-<<<<<<< HEAD
       "System.Text.Json/9.0.3": {
         "type": "package",
         "compile": {
           "lib/net9.0/_._": {
-=======
-      "System.Text.Json/9.0.2": {
-        "type": "package",
-        "compile": {
-          "lib/net9.0/System.Text.Json.dll": {
->>>>>>> 1f8167d7 (actualizando rama)
             "related": ".xml"
           }
         },
@@ -1108,11 +899,7 @@
       "System.Threading.Channels/7.0.0": {
         "type": "package",
         "compile": {
-<<<<<<< HEAD
           "lib/net7.0/_._": {
-=======
-          "lib/net7.0/System.Threading.Channels.dll": {
->>>>>>> 1f8167d7 (actualizando rama)
             "related": ".xml"
           }
         },
@@ -2128,17 +1915,10 @@
         "microsoft.codeanalysis.workspaces.msbuild.nuspec"
       ]
     },
-<<<<<<< HEAD
     "Microsoft.EntityFrameworkCore/9.0.3": {
       "sha512": "ji6fWE8bFWTvqaMue49RSCcAeqlec13hAbitTBZyz/RmYsQDhqM9VkWUoXS1x1mjcsyWjc5EQr2XyuAkwp0eNQ==",
       "type": "package",
       "path": "microsoft.entityframeworkcore/9.0.3",
-=======
-    "Microsoft.EntityFrameworkCore/9.0.2": {
-      "sha512": "P90ZuybgcpW32y985eOYxSoZ9IiL0UTYQlY0y1Pt1iHAnpZj/dQHREpSpry1RNvk8YjAeoAkWFdem5conqB9zQ==",
-      "type": "package",
-      "path": "microsoft.entityframeworkcore/9.0.2",
->>>>>>> 1f8167d7 (actualizando rama)
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2147,7 +1927,6 @@
         "buildTransitive/net8.0/Microsoft.EntityFrameworkCore.props",
         "lib/net8.0/Microsoft.EntityFrameworkCore.dll",
         "lib/net8.0/Microsoft.EntityFrameworkCore.xml",
-<<<<<<< HEAD
         "microsoft.entityframeworkcore.9.0.3.nupkg.sha512",
         "microsoft.entityframeworkcore.nuspec"
       ]
@@ -2156,16 +1935,6 @@
       "sha512": "HQH7HgwTl6IyasW7t6F2+ihuHLDmf9+8XaS41v8VHN5Z7x5ZMQIiHCbwxme4P5ICAjBG6VsWcjMCoh4fHbEwJg==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.abstractions/9.0.3",
-=======
-        "microsoft.entityframeworkcore.9.0.2.nupkg.sha512",
-        "microsoft.entityframeworkcore.nuspec"
-      ]
-    },
-    "Microsoft.EntityFrameworkCore.Abstractions/9.0.2": {
-      "sha512": "oVSjNSIYHsk0N66eqAWgDcyo9etEFbUswbz7SmlYR6nGp05byHrJAYM5N8U2aGWJWJI6WvIC2e4TXJgH6GZ6HQ==",
-      "type": "package",
-      "path": "microsoft.entityframeworkcore.abstractions/9.0.2",
->>>>>>> 1f8167d7 (actualizando rama)
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2173,7 +1942,6 @@
         "PACKAGE.md",
         "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll",
         "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.xml",
-<<<<<<< HEAD
         "microsoft.entityframeworkcore.abstractions.9.0.3.nupkg.sha512",
         "microsoft.entityframeworkcore.abstractions.nuspec"
       ]
@@ -2182,23 +1950,12 @@
       "sha512": "M+iOxejD3HqPV8/KE148wIehHA3cmMF+FgnpiN8CFB7DLokVSKQPPrwtHjcrNYJ/BDEssviEPNok/jtQWxj7xA==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.analyzers/9.0.3",
-=======
-        "microsoft.entityframeworkcore.abstractions.9.0.2.nupkg.sha512",
-        "microsoft.entityframeworkcore.abstractions.nuspec"
-      ]
-    },
-    "Microsoft.EntityFrameworkCore.Analyzers/9.0.2": {
-      "sha512": "w4jzX7XI+L3erVGzbHXpx64A3QaLXxqG3f1vPpGYYZGpxOIHkh7e4iLLD7cq4Ng1vjkwzWl5ZJp0Kj/nHsgFYg==",
-      "type": "package",
-      "path": "microsoft.entityframeworkcore.analyzers/9.0.2",
->>>>>>> 1f8167d7 (actualizando rama)
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll",
         "docs/PACKAGE.md",
-<<<<<<< HEAD
         "microsoft.entityframeworkcore.analyzers.9.0.3.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
@@ -2207,16 +1964,6 @@
       "sha512": "n5ZrAZ4RFELxYjJxN74lzmFlRrtSpYEYZfZcIJIWPGjSigwJsbya2CnOdjSVDPyfx3rKl9rzbd72D2DNHBJWeA==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.design/9.0.3",
-=======
-        "microsoft.entityframeworkcore.analyzers.9.0.2.nupkg.sha512",
-        "microsoft.entityframeworkcore.analyzers.nuspec"
-      ]
-    },
-    "Microsoft.EntityFrameworkCore.Design/9.0.2": {
-      "sha512": "WWRmTxb/yd05cTW+k32lLvIhffxilgYvwKHDxiqe7GRLKeceyMspuf5BRpW65sFF7S2G+Be9JgjUe1ypGqt9tg==",
-      "type": "package",
-      "path": "microsoft.entityframeworkcore.design/9.0.2",
->>>>>>> 1f8167d7 (actualizando rama)
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2225,7 +1972,6 @@
         "build/net8.0/Microsoft.EntityFrameworkCore.Design.props",
         "lib/net8.0/Microsoft.EntityFrameworkCore.Design.dll",
         "lib/net8.0/Microsoft.EntityFrameworkCore.Design.xml",
-<<<<<<< HEAD
         "microsoft.entityframeworkcore.design.9.0.3.nupkg.sha512",
         "microsoft.entityframeworkcore.design.nuspec"
       ]
@@ -2234,16 +1980,6 @@
       "sha512": "xsS+5TM7M5f3tCSRaSbzouGCoIgD2zokQxBGXvf9z3DusRztWvT1NNT9XJaY2JoK1qEEDcHah8is6azYmpZhIg==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.relational/9.0.3",
-=======
-        "microsoft.entityframeworkcore.design.9.0.2.nupkg.sha512",
-        "microsoft.entityframeworkcore.design.nuspec"
-      ]
-    },
-    "Microsoft.EntityFrameworkCore.Relational/9.0.2": {
-      "sha512": "r7O4N5uaM95InVSGUj7SMOQWN0f1PBF2Y30ow7Jg+pGX5GJCRVd/1fq83lQ50YMyq+EzyHac5o4CDQA2RsjKJQ==",
-      "type": "package",
-      "path": "microsoft.entityframeworkcore.relational/9.0.2",
->>>>>>> 1f8167d7 (actualizando rama)
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2251,7 +1987,6 @@
         "PACKAGE.md",
         "lib/net8.0/Microsoft.EntityFrameworkCore.Relational.dll",
         "lib/net8.0/Microsoft.EntityFrameworkCore.Relational.xml",
-<<<<<<< HEAD
         "microsoft.entityframeworkcore.relational.9.0.3.nupkg.sha512",
         "microsoft.entityframeworkcore.relational.nuspec"
       ]
@@ -2260,16 +1995,6 @@
       "sha512": "t8b0R6wtqC4o0hJ+oQkLPydw2MMLEoLEpQXCWbzXAm9NBMOngkDZNcvwF6DxbYdL5SlfZJXbYmiOxKZmwHNgNg==",
       "type": "package",
       "path": "microsoft.extensions.caching.abstractions/9.0.3",
-=======
-        "microsoft.entityframeworkcore.relational.9.0.2.nupkg.sha512",
-        "microsoft.entityframeworkcore.relational.nuspec"
-      ]
-    },
-    "Microsoft.Extensions.Caching.Abstractions/9.0.2": {
-      "sha512": "a7QhA25n+BzSM5r5d7JznfyluMBGI7z3qyLlFviZ1Eiqv6DdiK27sLZdP/rpYirBM6UYAKxu5TbmfhIy13GN9A==",
-      "type": "package",
-      "path": "microsoft.extensions.caching.abstractions/9.0.2",
->>>>>>> 1f8167d7 (actualizando rama)
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2289,26 +2014,15 @@
         "lib/net9.0/Microsoft.Extensions.Caching.Abstractions.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Caching.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Caching.Abstractions.xml",
-<<<<<<< HEAD
         "microsoft.extensions.caching.abstractions.9.0.3.nupkg.sha512",
-=======
-        "microsoft.extensions.caching.abstractions.9.0.2.nupkg.sha512",
->>>>>>> 1f8167d7 (actualizando rama)
         "microsoft.extensions.caching.abstractions.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-<<<<<<< HEAD
     "Microsoft.Extensions.Caching.Memory/9.0.3": {
       "sha512": "TXggBGDDd6r+J7FV09plXpzGmWcknVyoDsHlY2qcCbcAhmb0eH7Q9IkfIZl54/zEedVTa9jPgiPFTxH9WuCGMQ==",
       "type": "package",
       "path": "microsoft.extensions.caching.memory/9.0.3",
-=======
-    "Microsoft.Extensions.Caching.Memory/9.0.2": {
-      "sha512": "AlEfp0DMz8E1h1Exi8LBrUCNmCYcGDfSM4F/uK1D1cYx/R3w0LVvlmjICqxqXTsy7BEZaCf5leRZY2FuPEiFaw==",
-      "type": "package",
-      "path": "microsoft.extensions.caching.memory/9.0.2",
->>>>>>> 1f8167d7 (actualizando rama)
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2328,26 +2042,15 @@
         "lib/net9.0/Microsoft.Extensions.Caching.Memory.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Caching.Memory.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Caching.Memory.xml",
-<<<<<<< HEAD
         "microsoft.extensions.caching.memory.9.0.3.nupkg.sha512",
-=======
-        "microsoft.extensions.caching.memory.9.0.2.nupkg.sha512",
->>>>>>> 1f8167d7 (actualizando rama)
         "microsoft.extensions.caching.memory.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-<<<<<<< HEAD
     "Microsoft.Extensions.Configuration.Abstractions/9.0.3": {
       "sha512": "q5qlbm6GRUrle2ZZxy9aqS/wWoc+mRD3JeP6rcpiJTh5XcemYkplAcJKq8lU11ZfPom5lfbZZfnQvDqcUhqD5Q==",
       "type": "package",
       "path": "microsoft.extensions.configuration.abstractions/9.0.3",
-=======
-    "Microsoft.Extensions.Configuration.Abstractions/9.0.2": {
-      "sha512": "I0O/270E/lUNqbBxlRVjxKOMZyYjP88dpEgQTveml+h2lTzAP4vbawLVwjS9SC7lKaU893bwyyNz0IVJYsm9EA==",
-      "type": "package",
-      "path": "microsoft.extensions.configuration.abstractions/9.0.2",
->>>>>>> 1f8167d7 (actualizando rama)
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2367,26 +2070,15 @@
         "lib/net9.0/Microsoft.Extensions.Configuration.Abstractions.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.xml",
-<<<<<<< HEAD
         "microsoft.extensions.configuration.abstractions.9.0.3.nupkg.sha512",
-=======
-        "microsoft.extensions.configuration.abstractions.9.0.2.nupkg.sha512",
->>>>>>> 1f8167d7 (actualizando rama)
         "microsoft.extensions.configuration.abstractions.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-<<<<<<< HEAD
     "Microsoft.Extensions.DependencyInjection/9.0.3": {
       "sha512": "lDbxJpkl6X8KZGpkAxgrrthQ42YeiR0xjPp7KPx+sCPc3ZbpaIbjzd0QQ+9kDdK2RU2DOl3pc6tQyAgEZY3V0A==",
       "type": "package",
       "path": "microsoft.extensions.dependencyinjection/9.0.3",
-=======
-    "Microsoft.Extensions.DependencyInjection/9.0.2": {
-      "sha512": "ZffbJrskOZ40JTzcTyKwFHS5eACSWp2bUQBBApIgGV+es8RaTD4OxUG7XxFr3RIPLXtYQ1jQzF2DjKB5fZn7Qg==",
-      "type": "package",
-      "path": "microsoft.extensions.dependencyinjection/9.0.2",
->>>>>>> 1f8167d7 (actualizando rama)
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2408,26 +2100,15 @@
         "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.xml",
         "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.dll",
         "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.xml",
-<<<<<<< HEAD
         "microsoft.extensions.dependencyinjection.9.0.3.nupkg.sha512",
-=======
-        "microsoft.extensions.dependencyinjection.9.0.2.nupkg.sha512",
->>>>>>> 1f8167d7 (actualizando rama)
         "microsoft.extensions.dependencyinjection.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-<<<<<<< HEAD
     "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.3": {
       "sha512": "TfaHPSe39NyL2wxkisRxXK7xvHGZYBZ+dy3r+mqGvnxKgAPdHkMu3QMQZI4pquP6W5FIQBqs8FJpWV8ffCgDqQ==",
       "type": "package",
       "path": "microsoft.extensions.dependencyinjection.abstractions/9.0.3",
-=======
-    "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.2": {
-      "sha512": "MNe7GSTBf3jQx5vYrXF0NZvn6l7hUKF6J54ENfAgCO8y6xjN1XUmKKWG464LP2ye6QqDiA1dkaWEZBYnhoZzjg==",
-      "type": "package",
-      "path": "microsoft.extensions.dependencyinjection.abstractions/9.0.2",
->>>>>>> 1f8167d7 (actualizando rama)
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2449,26 +2130,15 @@
         "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
         "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
         "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
-<<<<<<< HEAD
         "microsoft.extensions.dependencyinjection.abstractions.9.0.3.nupkg.sha512",
-=======
-        "microsoft.extensions.dependencyinjection.abstractions.9.0.2.nupkg.sha512",
->>>>>>> 1f8167d7 (actualizando rama)
         "microsoft.extensions.dependencyinjection.abstractions.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-<<<<<<< HEAD
     "Microsoft.Extensions.DependencyModel/9.0.3": {
       "sha512": "194P+NOekDXrPHmM2R8678T4bRfZ2isQXDDAsXKE5qI0QLUnXbwB0upljAkyxk+Kkt1DV1tV+9tHOtHEEh3ksw==",
       "type": "package",
       "path": "microsoft.extensions.dependencymodel/9.0.3",
-=======
-    "Microsoft.Extensions.DependencyModel/9.0.2": {
-      "sha512": "3ImbcbS68jy9sKr9Z9ToRbEEX0bvIRdb8zyf5ebtL9Av2CUCGHvaO5wsSXfRfAjr60Vrq0tlmNji9IzAxW6EOw==",
-      "type": "package",
-      "path": "microsoft.extensions.dependencymodel/9.0.2",
->>>>>>> 1f8167d7 (actualizando rama)
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2488,26 +2158,15 @@
         "lib/net9.0/Microsoft.Extensions.DependencyModel.xml",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.dll",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.xml",
-<<<<<<< HEAD
         "microsoft.extensions.dependencymodel.9.0.3.nupkg.sha512",
-=======
-        "microsoft.extensions.dependencymodel.9.0.2.nupkg.sha512",
->>>>>>> 1f8167d7 (actualizando rama)
         "microsoft.extensions.dependencymodel.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-<<<<<<< HEAD
     "Microsoft.Extensions.Logging/9.0.3": {
       "sha512": "utIi2R1nm+PCWkvWBf1Ou6LWqg9iLfHU23r8yyU9VCvda4dEs7xbTZSwGa5KuwbpzpgCbHCIuKaFHB3zyFmnGw==",
       "type": "package",
       "path": "microsoft.extensions.logging/9.0.3",
-=======
-    "Microsoft.Extensions.Logging/9.0.2": {
-      "sha512": "loV/0UNpt2bD+6kCDzFALVE63CDtqzPeC0LAetkdhiEr/tTNbvOlQ7CBResH7BQBd3cikrwiBfaHdyHMFUlc2g==",
-      "type": "package",
-      "path": "microsoft.extensions.logging/9.0.2",
->>>>>>> 1f8167d7 (actualizando rama)
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2529,26 +2188,15 @@
         "lib/netstandard2.0/Microsoft.Extensions.Logging.xml",
         "lib/netstandard2.1/Microsoft.Extensions.Logging.dll",
         "lib/netstandard2.1/Microsoft.Extensions.Logging.xml",
-<<<<<<< HEAD
         "microsoft.extensions.logging.9.0.3.nupkg.sha512",
-=======
-        "microsoft.extensions.logging.9.0.2.nupkg.sha512",
->>>>>>> 1f8167d7 (actualizando rama)
         "microsoft.extensions.logging.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-<<<<<<< HEAD
     "Microsoft.Extensions.Logging.Abstractions/9.0.3": {
       "sha512": "H/MBMLt9A/69Ux4OrV7oCKt3DcMT04o5SCqDolulzQA66TLFEpYYb4qedMs/uwrLtyHXGuDGWKZse/oa8W9AZw==",
       "type": "package",
       "path": "microsoft.extensions.logging.abstractions/9.0.3",
-=======
-    "Microsoft.Extensions.Logging.Abstractions/9.0.2": {
-      "sha512": "dV9s2Lamc8jSaqhl2BQSPn/AryDIH2sSbQUyLitLXV0ROmsb+SROnn2cH939JFbsNrnf3mIM3GNRKT7P0ldwLg==",
-      "type": "package",
-      "path": "microsoft.extensions.logging.abstractions/9.0.2",
->>>>>>> 1f8167d7 (actualizando rama)
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2611,26 +2259,15 @@
         "lib/net9.0/Microsoft.Extensions.Logging.Abstractions.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.xml",
-<<<<<<< HEAD
         "microsoft.extensions.logging.abstractions.9.0.3.nupkg.sha512",
-=======
-        "microsoft.extensions.logging.abstractions.9.0.2.nupkg.sha512",
->>>>>>> 1f8167d7 (actualizando rama)
         "microsoft.extensions.logging.abstractions.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-<<<<<<< HEAD
     "Microsoft.Extensions.Options/9.0.3": {
       "sha512": "xE7MpY70lkw1oiid5y6FbL9dVw8oLfkx8RhSNGN8sSzBlCqGn0SyT3Fqc8tZnDaPIq7Z8R9RTKlS564DS+MV3g==",
       "type": "package",
       "path": "microsoft.extensions.options/9.0.3",
-=======
-    "Microsoft.Extensions.Options/9.0.2": {
-      "sha512": "zr98z+AN8+isdmDmQRuEJ/DAKZGUTHmdv3t0ZzjHvNqvA44nAgkXE9kYtfoN6581iALChhVaSw2Owt+Z2lVbkQ==",
-      "type": "package",
-      "path": "microsoft.extensions.options/9.0.2",
->>>>>>> 1f8167d7 (actualizando rama)
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2667,26 +2304,15 @@
         "lib/netstandard2.0/Microsoft.Extensions.Options.xml",
         "lib/netstandard2.1/Microsoft.Extensions.Options.dll",
         "lib/netstandard2.1/Microsoft.Extensions.Options.xml",
-<<<<<<< HEAD
         "microsoft.extensions.options.9.0.3.nupkg.sha512",
-=======
-        "microsoft.extensions.options.9.0.2.nupkg.sha512",
->>>>>>> 1f8167d7 (actualizando rama)
         "microsoft.extensions.options.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-<<<<<<< HEAD
     "Microsoft.Extensions.Primitives/9.0.3": {
       "sha512": "yCCJHvBcRyqapMSNzP+kTc57Eaavq2cr5Tmuil6/XVnipQf5xmskxakSQ1enU6S4+fNg3sJ27WcInV64q24JsA==",
       "type": "package",
       "path": "microsoft.extensions.primitives/9.0.3",
-=======
-    "Microsoft.Extensions.Primitives/9.0.2": {
-      "sha512": "puBMtKe/wLuYa7H6docBkLlfec+h8L35DXqsDKKJgW0WY5oCwJ3cBJKcDaZchv6knAyqOMfsl6VUbaR++E5LXA==",
-      "type": "package",
-      "path": "microsoft.extensions.primitives/9.0.2",
->>>>>>> 1f8167d7 (actualizando rama)
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2706,11 +2332,7 @@
         "lib/net9.0/Microsoft.Extensions.Primitives.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Primitives.xml",
-<<<<<<< HEAD
         "microsoft.extensions.primitives.9.0.3.nupkg.sha512",
-=======
-        "microsoft.extensions.primitives.9.0.2.nupkg.sha512",
->>>>>>> 1f8167d7 (actualizando rama)
         "microsoft.extensions.primitives.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -2732,7 +2354,6 @@
         "readme.md"
       ]
     },
-<<<<<<< HEAD
     "Npgsql/9.0.2": {
       "sha512": "hCbO8box7i/XXiTFqCJ3GoowyLqx3JXxyrbOJ6om7dr+eAknvBNhhUHeJVGAQo44sySZTfdVffp4BrtPeLZOAA==",
       "type": "package",
@@ -2765,8 +2386,6 @@
         "postgresql.png"
       ]
     },
-=======
->>>>>>> 1f8167d7 (actualizando rama)
     "System.CodeDom/6.0.0": {
       "sha512": "CPc6tWO1LAer3IzfZufDBRL+UZQcj5uS207NHALQzP84Vp/z6wF0Aa0YZImOQY8iStY0A2zI/e3ihKNPfUm8XA==",
       "type": "package",
@@ -3055,17 +2674,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-<<<<<<< HEAD
     "System.Text.Json/9.0.3": {
       "sha512": "r2JRkLjsYrq5Dpo7+y3Wa73OfirZPdVhxiTJWwZ+oJM7FOAe0LkM3GlH+pgkNRdd1G1kwUbmRCdmh4uoaWwu1g==",
       "type": "package",
       "path": "system.text.json/9.0.3",
-=======
-    "System.Text.Json/9.0.2": {
-      "sha512": "4TY2Yokh5Xp8XHFhsY9y84yokS7B0rhkaZCXuRiKppIiKwPVH4lVSFD9EEFzRpXdBM5ZeZXD43tc2vB6njEwwQ==",
-      "type": "package",
-      "path": "system.text.json/9.0.2",
->>>>>>> 1f8167d7 (actualizando rama)
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3128,11 +2740,7 @@
         "lib/net9.0/System.Text.Json.xml",
         "lib/netstandard2.0/System.Text.Json.dll",
         "lib/netstandard2.0/System.Text.Json.xml",
-<<<<<<< HEAD
         "system.text.json.9.0.3.nupkg.sha512",
-=======
-        "system.text.json.9.0.2.nupkg.sha512",
->>>>>>> 1f8167d7 (actualizando rama)
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -3169,13 +2777,9 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-<<<<<<< HEAD
       "Microsoft.EntityFrameworkCore >= 9.0.3",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.3",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 9.0.3"
-=======
-      "Microsoft.EntityFrameworkCore.Design >= 9.0.2"
->>>>>>> 1f8167d7 (actualizando rama)
     ]
   },
   "packageFolders": {
@@ -3221,26 +2825,19 @@
       "net9.0": {
         "targetAlias": "net9.0",
         "dependencies": {
-<<<<<<< HEAD
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[9.0.3, )"
           },
-=======
->>>>>>> 1f8167d7 (actualizando rama)
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",
-<<<<<<< HEAD
             "version": "[9.0.3, )"
           },
           "Npgsql.EntityFrameworkCore.PostgreSQL": {
             "target": "Package",
             "version": "[9.0.3, )"
-=======
-            "version": "[9.0.2, )"
->>>>>>> 1f8167d7 (actualizando rama)
           }
         },
         "imports": [
@@ -3262,5 +2859,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché D:\\Documentos\\SecretosParaContar\\backend\\VirtualBiblio.Data\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
