@@ -1,6 +1,7 @@
 {
   "version": 3,
   "targets": {
+<<<<<<< HEAD
     "net9.0": {
       "Microsoft.EntityFrameworkCore/9.0.3": {
         "type": "package",
@@ -702,6 +703,13 @@
     "net9.0": [
       "VirtualBiblio.Data >= 1.0.0"
     ]
+=======
+    "net9.0": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "net9.0": []
+>>>>>>> 1f8167d7 (actualizando rama)
   },
   "packageFolders": {
     "C:\\Users\\DaniHinGo\\.nuget\\packages\\": {}
@@ -709,11 +717,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "D:\\Documentos\\SecretosParaContar\\backend\\VirtualBiblio.Business\\VirtualBiblio.Business.csproj",
       "projectName": "VirtualBiblio.Business",
       "projectPath": "D:\\Documentos\\SecretosParaContar\\backend\\VirtualBiblio.Business\\VirtualBiblio.Business.csproj",
       "packagesPath": "C:\\Users\\DaniHinGo\\.nuget\\packages\\",
       "outputPath": "D:\\Documentos\\SecretosParaContar\\backend\\VirtualBiblio.Business\\obj\\",
+=======
+      "projectUniqueName": "D:\\Documentos\\secretosparacontar\\backend\\VirtualBiblio.Business\\VirtualBiblio.Business.csproj",
+      "projectName": "VirtualBiblio.Business",
+      "projectPath": "D:\\Documentos\\secretosparacontar\\backend\\VirtualBiblio.Business\\VirtualBiblio.Business.csproj",
+      "packagesPath": "C:\\Users\\DaniHinGo\\.nuget\\packages\\",
+      "outputPath": "D:\\Documentos\\secretosparacontar\\backend\\VirtualBiblio.Business\\obj\\",
+>>>>>>> 1f8167d7 (actualizando rama)
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\DaniHinGo\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -727,11 +743,15 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+<<<<<<< HEAD
           "projectReferences": {
             "D:\\Documentos\\SecretosParaContar\\backend\\VirtualBiblio.Data\\VirtualBiblio.Data.csproj": {
               "projectPath": "D:\\Documentos\\SecretosParaContar\\backend\\VirtualBiblio.Data\\VirtualBiblio.Data.csproj"
             }
           }
+=======
+          "projectReferences": {}
+>>>>>>> 1f8167d7 (actualizando rama)
         }
       },
       "warningProperties": {

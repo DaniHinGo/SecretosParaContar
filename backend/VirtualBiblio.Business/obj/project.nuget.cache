@@ -1,5 +1,6 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "aCtbc/R63dg=",
   "success": true,
   "projectFilePath": "D:\\Documentos\\SecretosParaContar\\backend\\VirtualBiblio.Business\\VirtualBiblio.Business.csproj",
@@ -20,5 +21,11 @@
     "C:\\Users\\DaniHinGo\\.nuget\\packages\\npgsql\\9.0.2\\npgsql.9.0.2.nupkg.sha512",
     "C:\\Users\\DaniHinGo\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\9.0.3\\npgsql.entityframeworkcore.postgresql.9.0.3.nupkg.sha512"
   ],
+=======
+  "dgSpecHash": "SjspehdyJP0=",
+  "success": true,
+  "projectFilePath": "D:\\Documentos\\secretosparacontar\\backend\\VirtualBiblio.Business\\VirtualBiblio.Business.csproj",
+  "expectedPackageFiles": [],
+>>>>>>> 1f8167d7 (actualizando rama)
   "logs": []
 }
