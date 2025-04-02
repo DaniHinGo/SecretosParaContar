@@ -2816,19 +2816,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\santi\\.nuget\\packages\\": {}
+    "C:\\Users\\USUARIO\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Profundización\\SecretosParaContar\\backend\\VirtualBiblio.Data\\VirtualBiblio.Data.csproj",
+      "projectUniqueName": "C:\\secretosParaContar1\\backend\\VirtualBiblio.Data\\VirtualBiblio.Data.csproj",
       "projectName": "VirtualBiblio.Data",
-      "projectPath": "C:\\Profundización\\SecretosParaContar\\backend\\VirtualBiblio.Data\\VirtualBiblio.Data.csproj",
-      "packagesPath": "C:\\Users\\santi\\.nuget\\packages\\",
-      "outputPath": "C:\\Profundización\\SecretosParaContar\\backend\\VirtualBiblio.Data\\obj\\",
+      "projectPath": "C:\\secretosParaContar1\\backend\\VirtualBiblio.Data\\VirtualBiblio.Data.csproj",
+      "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
+      "outputPath": "C:\\secretosParaContar1\\backend\\VirtualBiblio.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\santi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -2852,7 +2852,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net9.0": {
@@ -2899,7 +2899,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

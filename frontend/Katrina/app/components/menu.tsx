@@ -159,7 +159,7 @@ const Menu = () => {
             <li>
               <Link
                 to="/"
-                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro ${location.pathname === '/' ? 'text-orange' : 'text-darkBlue hover:text-orange'}`}
+                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold ${location.pathname === '/' ? 'text-orange' : 'text-white hover:text-orange'}`}
                 aria-current={location.pathname === '/' ? 'page' : undefined}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -169,7 +169,7 @@ const Menu = () => {
             <li>
               <Link
                 to="/Biblioteca"
-                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro ${location.pathname === '/Biblioteca' ? 'text-orange' : 'text-darkBlue hover:text-orange'}`}
+                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold  ${location.pathname === '/Biblioteca' ? 'text-orange' : 'text-white hover:text-orange'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Biblioteca
@@ -178,7 +178,7 @@ const Menu = () => {
             <li>
               <Link
                 to="/Novedades"
-                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro ${location.pathname === '/Novedades' ? 'text-orange' : 'text-darkBlue hover:text-orange'}`}
+                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold  ${location.pathname === '/Novedades' ? 'text-orange' : 'text-white hover:text-orange'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Novedades
@@ -187,7 +187,7 @@ const Menu = () => {
             <li>
               <Link
                 to="/nosotros"
-                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro ${location.pathname === '/nosotros' ? 'text-orange' : 'text-darkBlue hover:text-orange'}`}
+                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold ${location.pathname === '/nosotros' ? 'text-orange' : 'text-white hover:text-orange'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Nosotros
@@ -196,10 +196,10 @@ const Menu = () => {
             <li>
               <Link
                 to="/panel-administrativo"
-                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro ${location.pathname === '/panel-administrativo' ? 'text-orange' : 'text-darkBlue hover:text-orange'}`}
+                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold ${location.pathname === '/panel-administrativo' ? 'text-orange' : 'text-white hover:text-orange'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Panel Administrativoo
+                Panel Administrativo
               </Link>
             </li>
           </ul>
