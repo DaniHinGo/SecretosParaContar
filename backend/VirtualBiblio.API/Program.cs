@@ -17,6 +17,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<AudiolibroService>();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<UsuarioService>();
+builder.Services.AddScoped<ILibroRepository, LibroRepository>();
+builder.Services.AddScoped<LibroService>();
 
 //  Configurar controladores y Swagger
 builder.Services.AddControllers();
