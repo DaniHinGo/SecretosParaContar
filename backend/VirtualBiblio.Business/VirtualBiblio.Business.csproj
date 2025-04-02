@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\VirtualBiblio.Data\VirtualBiblio.Data.csproj" />
+    <ProjectReference Include="..\VirtualBiblio.API\VirtualBiblio.API.csproj" />
   </ItemGroup>
 
 </Project>
