@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http.Features;
+using Microsoft.AspNetCore.Http;
 using VirtualBiblio.Data;
 using VirtualBiblio.Business.Services;
 using VirtualBiblio.Data.Repositories;
@@ -17,13 +19,26 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<AudiolibroService>();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<UsuarioService>();
-builder.Services.AddScoped<ILibroRepository, LibroRepository>();
 builder.Services.AddScoped<LibroService>();
+builder.Services.AddScoped<IFileService, FileService>();
+
 
 //  Configurar controladores y Swagger
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Configurar Kestrel para aceptar archivos grandes (100 MB en este caso)
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.Limits.MaxRequestBodySize = 100_000_000; // 100 MB
+});
+
+// Configurar formularios para permitir archivos grandes
+builder.Services.Configure<FormOptions>(options =>
+{
+    options.MultipartBodyLengthLimit = 100_000_000; // 100 MB
+});
 
 var app = builder.Build();
 
