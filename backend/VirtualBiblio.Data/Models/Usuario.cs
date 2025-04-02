@@ -1,7 +1,25 @@
-namespace VirtualBiblio.Data.Models;
+using System.ComponentModel.DataAnnotations;
 
-public class Usuario
+namespace VirtualBiblio.Data.Models
 {
-    public int Id { get; set; }
-    public string Nombre { get; set; }
+    public class Usuario
+    {
+        public int Id { get; set; }
+
+        [Required]
+        [MaxLength(100)]
+        public string Nombre { get; set; }
+
+        [Required]
+        [EmailAddress]
+        public string Correo { get; set; }
+
+        [Required]
+        [MinLength(8)]
+        public string Contrasena { get; set; }
+
+        [Required]
+        [MaxLength(50)]
+        public string Rol { get; set; }
+    }
 }

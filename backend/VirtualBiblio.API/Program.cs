@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using VirtualBiblio.Data;
 using VirtualBiblio.Business.Services;
+using VirtualBiblio.Data.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 //  Registrar servicios y repositorios
 builder.Services.AddScoped<AudiolibroService>();
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddScoped<UsuarioService>();
 
 //  Configurar controladores y Swagger
 builder.Services.AddControllers();

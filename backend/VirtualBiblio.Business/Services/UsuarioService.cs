@@ -1,7 +1,7 @@
-using VirtualBiblio.Data.Repositories;
-using VirtualBiblio.Data.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using VirtualBiblio.Data.Models;
+using VirtualBiblio.Data.Repositories;
 
 namespace VirtualBiblio.Business.Services
 {
@@ -14,11 +14,39 @@ namespace VirtualBiblio.Business.Services
             _repository = repository;
         }
 
-        public Task<IEnumerable<Usuario>> GetUsuarios() => _repository.GetUsuarios();
-        public Task<Usuario> GetUsuarioById(int id) => _repository.GetUsuarioById(id);
-        public Task AddUsuario(Usuario usuario) => _repository.AddUsuario(usuario);
-        public Task UpdateUsuario(Usuario usuario) => _repository.UpdateUsuario(usuario);
-        public Task DeleteUsuario(int id) => _repository.DeleteUsuario(id);
+        public async Task<IEnumerable<Usuario>> GetUsuarios()
+        {
+            return await _repository.GetUsuarios();
+        }
+
+        public async Task<Usuario> GetUsuarioById(int id)
+        {
+            return await _repository.GetUsuarioById(id);
+        }
+
+        public async Task<bool> UsuarioExiste(string correo)
+        {
+            var usuario = await _repository.GetUsuarioByCorreo(correo);
+            return usuario != null;
+        }
+
+        public async Task<bool> AddUsuario(Usuario usuario)
+        {
+            if (await UsuarioExiste(usuario.Correo))
+                return false;
+
+            await _repository.AddUsuario(usuario);
+            return true;
+        }
+
+        public async Task UpdateUsuario(Usuario usuario)
+        {
+            await _repository.UpdateUsuario(usuario);
+        }
+
+        public async Task DeleteUsuario(int id)
+        {
+            await _repository.DeleteUsuario(id);
+        }
     }
 }
-

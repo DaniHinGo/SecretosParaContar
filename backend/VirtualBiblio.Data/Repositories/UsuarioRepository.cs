@@ -1,10 +1,9 @@
-using VirtualBiblio.Data;
-using VirtualBiblio.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using VirtualBiblio.Data.Models;
 
-namespace  VirtualBiblio.Data.Repositories
+namespace VirtualBiblio.Data.Repositories
 {
     public class UsuarioRepository : IUsuarioRepository
     {
@@ -25,6 +24,11 @@ namespace  VirtualBiblio.Data.Repositories
             return await _context.Usuarios.FindAsync(id);
         }
 
+        public async Task<Usuario> GetUsuarioByCorreo(string correo)
+        {
+            return await _context.Usuarios.FirstOrDefaultAsync(u => u.Correo == correo);
+        }
+
         public async Task AddUsuario(Usuario usuario)
         {
             _context.Usuarios.Add(usuario);
@@ -33,7 +37,7 @@ namespace  VirtualBiblio.Data.Repositories
 
         public async Task UpdateUsuario(Usuario usuario)
         {
-            _context.Entry(usuario).State = EntityState.Modified;
+            _context.Usuarios.Update(usuario);
             await _context.SaveChangesAsync();
         }
 

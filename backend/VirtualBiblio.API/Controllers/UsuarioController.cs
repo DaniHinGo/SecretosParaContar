@@ -34,7 +34,9 @@ namespace VirtualBiblio.API.Controllers
         [HttpPost]
         public async Task<ActionResult<Usuario>> AddUsuario(Usuario usuario)
         {
-            await _service.AddUsuario(usuario);
+            if (!await _service.AddUsuario(usuario))
+                return Conflict("El correo ya está registrado.");
+
             return CreatedAtAction(nameof(GetUsuarioById), new { id = usuario.Id }, usuario);
         }
 
