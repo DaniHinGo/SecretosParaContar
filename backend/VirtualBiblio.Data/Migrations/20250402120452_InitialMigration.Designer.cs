@@ -11,7 +11,7 @@ using VirtualBiblio.Data;
 namespace VirtualBiblio.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250402053725_InitialMigration")]
+    [Migration("20250402120452_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -62,6 +62,61 @@ namespace VirtualBiblio.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Audiolibros");
+                });
+
+            modelBuilder.Entity("VirtualBiblio.Data.Models.Libro", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AnioPublicacion")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("AuthorId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("ContraPortada")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Edicion")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Editorial")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Formato")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Genero")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("ISBN13")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Idioma")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Portada")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Titulo")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Libros");
                 });
 
             modelBuilder.Entity("VirtualBiblio.Data.Models.Usuario", b =>

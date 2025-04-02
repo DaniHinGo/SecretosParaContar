@@ -31,6 +31,29 @@ namespace VirtualBiblio.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Libros",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Titulo = table.Column<string>(type: "text", nullable: false),
+                    ISBN13 = table.Column<string>(type: "text", nullable: false),
+                    Editorial = table.Column<string>(type: "text", nullable: false),
+                    AnioPublicacion = table.Column<int>(type: "integer", nullable: false),
+                    Formato = table.Column<string>(type: "text", nullable: false),
+                    Genero = table.Column<string>(type: "text", nullable: false),
+                    Idioma = table.Column<string>(type: "text", nullable: false),
+                    Portada = table.Column<string>(type: "text", nullable: false),
+                    Edicion = table.Column<string>(type: "text", nullable: false),
+                    ContraPortada = table.Column<string>(type: "text", nullable: false),
+                    AuthorId = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Libros", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Usuarios",
                 columns: table => new
                 {
@@ -52,6 +75,9 @@ namespace VirtualBiblio.Data.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Audiolibros");
+
+            migrationBuilder.DropTable(
+                name: "Libros");
 
             migrationBuilder.DropTable(
                 name: "Usuarios");
