@@ -1,18 +1,12 @@
-using VirtualBiblio.Data;
-using VirtualBiblio.Business.Interfaces;
-using VirtualBiblio.Business.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Http;
+using VirtualBiblio.Data;
+using VirtualBiblio.Business.Services;
 using VirtualBiblio.Data.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Agregar UnitOfWork y servicios
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-builder.Services.AddScoped<IAuthorService, AuthorService>();
-
-builder.Services.AddControllers();
 //  Agregar la conexión a PostgreSQL
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(
@@ -47,8 +41,6 @@ builder.Services.Configure<FormOptions>(options =>
 });
 
 var app = builder.Build();
-app.UseRouting();
-app.UseEndpoints(endpoints => endpoints.MapControllers());
 
 //  Configuración del middleware
 if (app.Environment.IsDevelopment())

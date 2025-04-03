@@ -8,18 +8,18 @@ namespace VirtualBiblio.Data.Models
 
         [Required]
         [MaxLength(100)]
-        public string Nombre { get; set; }
+        public string? Nombre { get; set; }
 
         [Required]
         [EmailAddress]
-        public string Correo { get; set; }
+        public string? Correo { get; set; }
 
         [Required]
         [MinLength(8)]
-        public string Contrasena { get; set; }
+        public string? Contrasena { get; set; }
 
         [Required]
         [MaxLength(50)]
-        public string Rol { get; set; }
+        public string? Rol { get; set; }
     }
 }

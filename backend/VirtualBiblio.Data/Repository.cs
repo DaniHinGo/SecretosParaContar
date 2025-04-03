@@ -5,9 +5,9 @@ namespace VirtualBiblio.Data
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        protected readonly ApplicationDbContext _context;
+        protected readonly AppDbContext _context;
 
-        public Repository(ApplicationDbContext context)
+        public Repository(AppDbContext context)
         {
             _context = context;
         }

@@ -4,10 +4,10 @@ namespace VirtualBiblio.Data
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly ApplicationDbContext _context;
+        private readonly AppDbContext _context;
         private IRepository<Models.Author> _authors;
 
-        public UnitOfWork(ApplicationDbContext context)
+        public UnitOfWork(AppDbContext context)
         {
             _context = context;
             _authors = new Repository<Author>(context); // Inicializar en el constructor
