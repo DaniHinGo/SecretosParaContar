@@ -1,8 +1,7 @@
-node_modules
-
-/.cache
-/build
-.env
-
-**/obj/
+# .NET generated files
 **/bin/
+**/obj/
+
+# Node.js generated files
+node_modules/
+frontend/Katrina/build/
