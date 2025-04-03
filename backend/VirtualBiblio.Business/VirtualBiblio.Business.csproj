@@ -7,6 +7,7 @@
   </PropertyGroup>
     <ItemGroup>
     <ProjectReference Include="..\VirtualBiblio.Data\VirtualBiblio.Data.csproj" />
+    <ProjectReference Include="..\VirtualBiblio.API\VirtualBiblio.API.csproj" />
   </ItemGroup>
     <ItemGroup>
       <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.3.0" />
@@ -21,4 +22,6 @@
         <PrivateAssets>all</PrivateAssets>
       </PackageReference>
     </ItemGroup>
+
+
 </Project>
