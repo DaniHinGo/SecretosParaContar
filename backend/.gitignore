@@ -1,0 +1,34 @@
+# Archivos de compilación y dependencias
+bin/
+obj/
+out/
+*.exe
+*.dll
+*.pdb
+*.cache
+*.log
+*.vspscc
+*.vssscc
+
+# Configuraciones de Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Dependencias de paquetes
+packages/
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Archivos de configuración generados
+*.config
+*.csproj.user
+*.csproj.transient
+*.csproj.DotSettings.user
+
+
+# Archivos de migraciones de Entity Framework (si no se versionan)
+Migrations/

@@ -9,6 +9,9 @@ namespace VirtualBiblio.Data
 
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Audiolibro> Audiolibros { get; set; }
+
+        public DbSet<Libro> Libros { get; set; }
+        public DbSet<Archivo> Archivos { get; set; }
     }
 }
 
