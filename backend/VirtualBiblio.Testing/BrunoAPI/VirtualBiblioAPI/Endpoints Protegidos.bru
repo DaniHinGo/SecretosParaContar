@@ -1,0 +1,37 @@
+meta {
+  name: Endpoints Protegidos
+  type: http
+  seq: 7
+}
+
+post {
+  url: http://localhost:5084/api/libro
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{token}}
+}
+
+body:json {
+  {
+    "titulo": "ERASE UNA VEZ EN COLOMBIA",
+    "isbn13": "978-0307474728",
+    "editorial": "Sudamericana",
+    "añoPublicacion": 1967,
+    "formato": "PDF",
+    "genero": "Realismo mágico, Novela",
+    "idioma": "Español",
+    "portada": "/libros/cien.jpg",
+    "edicion": "1ra",
+    "contraPortada": "Una obra maestra de la literatura latinoamericana.",
+    "authorId": 1,
+    "archivoId": 1
+  }
+  
+}
+
+vars:pre-request {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBiaWJsaW90ZWNhLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzQzNzU0NTY3LCJpc3MiOiJWaXJ0dWFsQmlibGlvQVBJIiwiYXVkIjoiVmlydHVhbEJpYmxpb0FQSSJ9.Wmp364hpdflk21nUI865P1m-ASBtS4d8YxYj4WkHRMw
+}
