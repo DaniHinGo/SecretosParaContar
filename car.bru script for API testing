@@ -1,0 +1,20 @@
+warning: in the working copy of 'backend/VirtualBiblio.Testing/BrunoAPI/VirtualBiblioAPI/Buscar.bru', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/backend/VirtualBiblio.Testing/BrunoAPI/VirtualBiblioAPI/Buscar.bru b/backend/VirtualBiblio.Testing/BrunoAPI/VirtualBiblioAPI/Buscar.bru[m
+[1mindex 2d7f4526..bb1f6f6a 100644[m
+[1m--- a/backend/VirtualBiblio.Testing/BrunoAPI/VirtualBiblioAPI/Buscar.bru[m
+[1m+++ b/backend/VirtualBiblio.Testing/BrunoAPI/VirtualBiblioAPI/Buscar.bru[m
+[36m@@ -5,12 +5,12 @@[m [mmeta {[m
+ }[m
+ [m
+ get {[m
+[31m-  url: http://localhost:5084/api/authors?nationality=ReinoUnido&isAlive=false[m
+[32m+[m[32m  url: http://localhost:5084/api/authors?nationality=Colombiano&isAlive=false[m
+   body: none[m
+   auth: inherit[m
+ }[m
+ [m
+ params:query {[m
+[31m-  nationality: ReinoUnido[m
+[32m+[m[32m  nationality: Colombiano[m
+   isAlive: false[m
+ }[m
