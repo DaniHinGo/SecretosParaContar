@@ -1,0 +1,21 @@
+meta {
+  name: Registar usuario
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:5084/api/auth/register
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "nombre": "Juan Pérez",
+    "correo": "juan@example.com",
+    "contrasena": "MiContraseña123",
+    "rol": "Admin"
+  }
+  
+}

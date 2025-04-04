@@ -20,6 +20,6 @@ namespace VirtualBiblio.Data.Models
 
         [Required]
         [MaxLength(50)]
-        public string? Rol { get; set; }
+        public string? Rol { get; set; } = "Usuario"; // Por defecto, será Usuario
     }
 }
