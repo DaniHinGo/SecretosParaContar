@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Http;
 using VirtualBiblio.Data;
 using VirtualBiblio.Business.Services;
+using VirtualBiblio.Business.Interfaces;
 using VirtualBiblio.Data.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +22,8 @@ builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<UsuarioService>();
 builder.Services.AddScoped<LibroService>();
 builder.Services.AddScoped<IFileService, FileService>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IAuthorService, AuthorService>();
 
 
 //  Configurar controladores y Swagger

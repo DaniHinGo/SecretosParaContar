@@ -43,7 +43,7 @@ namespace VirtualBiblio.Business.Services
                 Tamano = archivo.Length
             };
 
-            _context.Archivos.Add(nuevoArchivo);
+            _context.Archivo.Add(nuevoArchivo);
             await _context.SaveChangesAsync();
 
             return nuevoArchivo;

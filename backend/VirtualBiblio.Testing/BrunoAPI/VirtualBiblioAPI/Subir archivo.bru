@@ -1,0 +1,15 @@
+meta {
+  name: Subir archivo
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:5084/api/archivos/subir
+  body: multipartForm
+  auth: inherit
+}
+
+body:multipart-form {
+  archivo: @file(C:\Users\santi\Downloads\OneDrive_2025-04-02\Recursos Secretos para Contar\SPC_logotipo_Horizontal_AlMargen_RGB (1).png)
+}
