@@ -120,15 +120,15 @@ const Menu = () => {
               ) : (
                 <ul className="py-2" aria-labelledby="user-menu-button">
                   <li>
-                    <button
-                      onClick={() => {
-                        openModal('login');
-                        setIsDropdownOpen(false);
-                      }}
-                      className="block w-full text-left px-4 py-2 text-sm text-darkBlue hover:bg-lightGreen font-BeVietnamPro"
-                    >
-                      Iniciar Sesión
-                    </button>
+                  <button
+                    onClick={() => {
+                      openModal('login');
+                      setIsDropdownOpen(false);
+                    }}
+                    className="block w-full text-left px-4 py-2 text-sm text-orange-600 hover:bg-lightGreen font-BeVietnamPro"
+                  >
+                    Iniciar Sesión
+                  </button>
                   </li>
                 </ul>
               )}
@@ -164,7 +164,7 @@ const Menu = () => {
             <li>
               <Link
                 to="/"
-                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold ${location.pathname === '/' ? 'text-orange-600' : 'text-white hover:text-orange-600'}`}
+                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold text-base ${location.pathname === '/' ? 'text-orange-600' : 'text-white hover:text-orange-600'}`}
                 aria-current={location.pathname === '/' ? 'page' : undefined}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -174,7 +174,7 @@ const Menu = () => {
             <li>
               <Link
                 to="/Biblioteca"
-                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold  ${location.pathname === '/Biblioteca' ? 'text-orange-600' : 'text-white hover:text-orange-600'}`}
+                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold text-base ${location.pathname === '/Biblioteca' ? 'text-orange-600' : 'text-white hover:text-orange-600'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Biblioteca
@@ -183,7 +183,7 @@ const Menu = () => {
             <li>
               <Link
                 to="/Novedades"
-                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold  ${location.pathname === '/Novedades' ? 'text-orange-600' : 'text-white hover:text-orange-600'}`}
+                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold text-base ${location.pathname === '/Novedades' ? 'text-orange-600' : 'text-white hover:text-orange-600'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Novedades
@@ -192,7 +192,7 @@ const Menu = () => {
             <li>
               <Link
                 to="/nosotros"
-                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold ${location.pathname === '/nosotros' ? 'text-orange-600' : 'text-white hover:text-orange-600'}`}
+                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold text-base ${location.pathname === '/nosotros' ? 'text-orange-600' : 'text-white hover:text-orange-600'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Nosotros
@@ -201,7 +201,7 @@ const Menu = () => {
             <li>
               <Link
                 to="/panel-administrativo"
-                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold ${location.pathname === '/panel-administrativo' ? 'text-orange-600' : 'text-white hover:text-orange-600'}`}
+                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold text-base ${location.pathname === '/panel-administrativo' ? 'text-orange-600' : 'text-white hover:text-orange-600'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Panel Administrativo
