@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using VirtualBiblio.Business.Services;
@@ -18,6 +19,7 @@ namespace VirtualBiblio.API.Controllers
         }
 
         [HttpPost("subir")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> SubirArchivo([FromForm] IFormFile archivo)
         {
             if (archivo == null)

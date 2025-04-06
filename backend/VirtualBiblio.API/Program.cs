@@ -8,6 +8,7 @@ using VirtualBiblio.Data;
 using VirtualBiblio.Business.Services;
 using VirtualBiblio.Business.Interfaces;
 using VirtualBiblio.Data.Repositories;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -63,7 +64,31 @@ builder.Services.Configure<FormOptions>(options =>
     options.MultipartBodyLengthLimit = 100_000_000; // 100 MB
 });
 
+// Configura CORS aquí
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
 var app = builder.Build();
+
+// Habilitar archivos estáticos para acceder a los libros
+var librosPath = Path.Combine(Directory.GetCurrentDirectory(), "ArchivosSubidos");
+if (!Directory.Exists(librosPath))
+    Directory.CreateDirectory(librosPath);
+
+app.UseCors();
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(librosPath),
+    RequestPath = "/ArchivosSubidos"
+});
 
 //  Configuración del middleware
 if (app.Environment.IsDevelopment())

@@ -6,6 +6,15 @@ meta {
 
 post {
   url: http://localhost:5084/api/auth/login
-  body: none
+  body: json
   auth: inherit
+}
+
+body:json {
+  {
+    "correo": "admin@biblioteca.com",
+    "contraseña": "Admin12345"
+  }
+  
+  
 }

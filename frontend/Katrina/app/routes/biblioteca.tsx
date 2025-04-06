@@ -1,30 +1,60 @@
-import React from 'react';
+import { json } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
+import { getLibros } from "../routes/services/librosApi";
 
-const libros = [
-  { id: 1, titulo: "El Principito", imagen: "/images/principito.jpg" },
-  { id: 2, titulo: "Autum", imagen: "/images/autum.png" },
-  { id: 3, titulo: "El Gato con Botas", imagen: "/images/gato.jpg" },
-  { id: 4, titulo: "Pedro el Gato de Pie", imagen: "/images/pedro.png" },
-  { id: 5, titulo: "Los vertidos de mamá", imagen: "/images/vestidos.jpg" },
-  { id: 6, titulo: "Harry Potter y la piedra filosofal", imagen: "/images/harry.jpg" },
-];
+export const loader = async () => {
+  try {
+    const libros = await getLibros();
+    return json(libros);
+  } catch (error) {
+    console.error("Error cargando libros:", error);
+    throw new Response("Error al cargar libros", {
+      status: 500,
+    });
+  }
+};
 
 export default function Biblioteca() {
+  const libros = useLoaderData();
+
   return (
     <section className="bg-[#F8F8F8] py-12 text-center">
       <h2 className="text-[#FA4616] text-2xl font-bold">Biblioteca</h2>
+
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto mt-6">
-        {libros.map((libro) => (
-          <div key={libro.id} className="bg-white p-6 shadow-md rounded-lg h-full flex flex-col justify-between">
-            <img 
-              src={libro.imagen} 
-              alt={libro.titulo} 
-              className="w-full h-56 object-contain bg-white p-2 rounded"
-            />
-            <p className="text-[#FA4616] font-bold mt-2 flex-grow">{libro.titulo}</p>
-            <a href="#" className="text-blue-500 mt-2 block">Ver más...</a>
-          </div>
-        ))}
+        {Array.isArray(libros) && libros.length > 0 ? (
+          libros.map((libro) => (
+            <div
+              key={libro.id}
+              className="bg-white p-6 shadow-md rounded-lg h-full flex flex-col justify-between"
+            >
+              <img
+                src={`http://localhost:5084/${libro.imagen}`}
+                alt={libro.titulo}
+                className="w-full h-56 object-contain bg-white p-2 rounded"
+              />
+              <p className="text-[#FA4616] font-bold mt-2 flex-grow">
+                {libro.titulo}
+              </p>
+              <div className="flex justify-between mt-2">
+                <a
+                  href={`http://localhost:5084/api/libros/leer/${libro.id}`}
+                  className="text-blue-500 hover:underline"
+                >
+                  Leer en línea
+                </a>
+                <a
+                  href={`http://localhost:5084/api/libros/descargar/${libro.id}`}
+                  className="text-green-500 hover:underline"
+                >
+                  Descargar
+                </a>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p className="text-gray-500 col-span-3">No hay libros disponibles.</p>
+        )}
       </div>
     </section>
   );
