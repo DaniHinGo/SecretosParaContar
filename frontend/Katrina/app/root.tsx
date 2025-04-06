@@ -10,6 +10,11 @@ import type { LinksFunction } from "@remix-run/node";
 import "./tailwind.css";
 import Menu from "./components/menu";
 import Footer from "./components/Footer";
+import { ModalProvider } from "./context/ModalContext";
+import { Modal } from "./components/Modal";
+import { LoginForm } from "./components/auth/LoginForm";
+import { RegisterForm } from "./components/auth/RegisterForm";
+import { useModal } from "./context/ModalContext";
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -47,16 +52,29 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
+function ModalWrapper() {
+  const { isOpen, modalType, closeModal } = useModal();
+
+  return (
+    <Modal isOpen={isOpen} onClose={closeModal} title={modalType === 'login' ? 'Iniciar Sesión' : 'Registrarse'}>
+      {modalType === 'login' ? <LoginForm /> : <RegisterForm />}
+    </Modal>
+  );
+}
+
 export default function Root() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <Menu />
-      
-      <main className="flex-grow">
-        <Outlet /> {/* Aquí se renderizan las diferentes páginas */}
-      </main>
+    <ModalProvider>
+      <div className="flex flex-col min-h-screen">
+        <Menu />
+        
+        <main className="flex-grow">
+          <Outlet />
+        </main>
 
-      <Footer /> {/* Footer fijo en todas las páginas */}
-    </div>
+        <Footer />
+        <ModalWrapper />
+      </div>
+    </ModalProvider>
   );
 }

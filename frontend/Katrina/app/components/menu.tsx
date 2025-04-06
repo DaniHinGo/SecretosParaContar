@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from "@remix-run/react";
+import { useModal } from '../context/ModalContext';
 
 const Menu = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const { openModal } = useModal();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Simulación de autenticación
@@ -117,13 +119,15 @@ const Menu = () => {
               ) : (
                 <ul className="py-2" aria-labelledby="user-menu-button">
                   <li>
-                    <Link
-                      to="/login"
-                      className="block px-4 py-2 text-sm text-darkBlue hover:bg-lightGreen font-BeVietnamPro"
-                      onClick={toggleDropdown}
+                    <button
+                      onClick={() => {
+                        openModal('login');
+                        setIsDropdownOpen(false);
+                      }}
+                      className="block w-full text-left px-4 py-2 text-sm text-darkBlue hover:bg-lightGreen font-BeVietnamPro"
                     >
                       Iniciar Sesión
-                    </Link>
+                    </button>
                   </li>
                 </ul>
               )}
