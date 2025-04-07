@@ -1,4 +1,5 @@
 export default function HomePage() {
+  
   return (
     <div className="w-full">
       {/* Banner de bienvenida */}
@@ -13,8 +14,18 @@ export default function HomePage() {
           <h1 className="text-3xl font-bold">Bienvenidos a Secretos para Contar</h1>
           <p className="text-lg mt-2">Explora un mundo de conocimiento con nuestra biblioteca.</p>
           <div className="mt-4 flex justify-center space-x-4">
-            <button className="bg-[#FA4616] hover:bg-red-800 text-white px-6 py-2 rounded">Donar ahora</button>
-            <button className="bg-white text-[#FA4616] px-6 py-2 rounded border border-[#FA4616]">Explorar Biblioteca</button>
+            <button 
+              onClick={() => window.open('https://secretosparacontar.org', '_blank')}
+              className="bg-[#FA4616] hover:bg-red-800 text-white px-6 py-2 rounded"
+            >
+              Donar ahora
+            </button>
+            <a 
+              href="/Biblioteca"
+              className="bg-white text-[#FA4616] px-6 py-2 rounded border border-[#FA4616]"
+            >
+              Explorar Biblioteca
+            </a>
           </div>
         </div>
 

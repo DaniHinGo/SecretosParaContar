@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { useNavigate } from '@remix-run/react';
 
 const Footer = () => {
     const [email, setEmail] = useState('');
     const [showSuccess, setShowSuccess] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const currentYear = new Date().getFullYear();
+    const navigate = useNavigate();
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -23,6 +25,11 @@ const Footer = () => {
                 setShowSuccess(false);
             }, 3000);
         }, 1000);
+    };
+
+    const handleContactClick = () => {
+        // Navegamos a la página principal y abrimos el modal de contacto
+        navigate('/?modal=contact');
     };
 
     return (
@@ -62,10 +69,15 @@ const Footer = () => {
                         <h3 className="text-lg font-semibold">Enlaces Importantes</h3>
                         <ul className="space-y-2">
                             <li>
-                                <a href="/terminos" className="hover:underline">Términos y condiciones</a>
+                                <a href="/terminos-condiciones" className="hover:underline">Términos y condiciones</a>
                             </li>
                             <li>
-                                <a href="/contacto" className="hover:underline">Contacto</a>
+                            <button
+                            className="hover:underline"
+                            onClick={handleContactClick}
+                            >
+                            Contáctanos
+                            </button>
                             </li>
                             <li>
                                 <a href="/nosotros" className="hover:underline">Sobre nosotros</a>

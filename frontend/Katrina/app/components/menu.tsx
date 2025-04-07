@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link, useLocation, useNavigate } from "@remix-run/react";
+import { useState, useEffect, useRef } from 'react';
+import { Link, useNavigate, useLocation } from "@remix-run/react";
 
 const Menu = () => {
   const location = useLocation();
@@ -40,6 +40,15 @@ const Menu = () => {
     navigate('/'); // Redirige al inicio
   };
 
+  const handleOpenModal = (view: 'login' | 'register' | 'contact') => {
+    navigate(`/?modal=${view}`);
+    setIsDropdownOpen(false);
+  };
+
+  const handleDonate = () => {
+    window.open('https://secretosparacontar.org', '_blank');
+  };
+
   return (
     <nav className="w-full">
       {/* Línea superior pequeña */}
@@ -54,10 +63,17 @@ const Menu = () => {
         {/* Menú hamburguesa y ícono de perfil */}
         <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           {/* Ícono de perfil */}
+          <button
+            onClick={handleDonate}
+            className="text-white bg-[#002847] hover:bg-[#002847]/90 focus:ring-4 focus:ring-[#002847] font-medium rounded-lg text-sm px-4 py-2 mr-4"
+          >
+            Donar
+          </button>
+
           <div ref={dropdownRef} className="relative">
             <button
               type="button"
-              className="flex text-sm bg-gray-100 rounded-full md:me-0 focus:ring-4 focus:ring-orange dark:focus:ring-orange"
+              className="flex text-sm bg-gray-100 rounded-full md:me-0 focus:ring-4 focus:ring-[#002847]"
               id="user-menu-button"
               aria-expanded={isDropdownOpen}
               onClick={toggleDropdown}
@@ -67,7 +83,7 @@ const Menu = () => {
             </button>
             {/* Dropdown menu */}
             <div
-              className={`z-50 absolute right-0 mt-2 ${isDropdownOpen ? 'block' : 'hidden'} text-base list-none bg-white divide-y divide-lightGreen rounded-lg shadow-sm`}
+              className={`z-50 absolute right-0 mt-2 ${isDropdownOpen ? 'block' : 'hidden'} text-base list-none bg-white divide-y divide-[#618EB4] rounded-lg shadow-sm`}
               id="user-dropdown"
             >
               {isLoggedIn ? (
@@ -117,13 +133,28 @@ const Menu = () => {
               ) : (
                 <ul className="py-2" aria-labelledby="user-menu-button">
                   <li>
-                    <Link
-                      to="/login"
-                      className="block px-4 py-2 text-sm text-darkBlue hover:bg-lightGreen font-BeVietnamPro"
-                      onClick={toggleDropdown}
+                    <button
+                      className="block w-full text-left px-4 py-2 text-sm text-[#002847] hover:bg-[#618EB4]/10 font-BeVietnamPro"
+                      onClick={() => handleOpenModal('login')}
                     >
                       Iniciar Sesión
-                    </Link>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      className="block w-full text-left px-4 py-2 text-sm text-[#002847] hover:bg-[#618EB4]/10 font-BeVietnamPro"
+                      onClick={() => handleOpenModal('register')}
+                    >
+                      Registrarse
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      className="block w-full text-left px-4 py-2 text-sm text-[#002847] hover:bg-[#618EB4]/10 font-BeVietnamPro"
+                      onClick={() => handleOpenModal('contact')}
+                    >
+                      Contáctanos
+                    </button>
                   </li>
                 </ul>
               )}
@@ -159,7 +190,7 @@ const Menu = () => {
             <li>
               <Link
                 to="/"
-                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold ${location.pathname === '/' ? 'text-orange' : 'text-white hover:text-orange'}`}
+                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold ${location.pathname === '/' ? 'text-orange-600' : 'text-white hover:text-orange-600'}`}
                 aria-current={location.pathname === '/' ? 'page' : undefined}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -169,7 +200,7 @@ const Menu = () => {
             <li>
               <Link
                 to="/Biblioteca"
-                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold  ${location.pathname === '/Biblioteca' ? 'text-orange' : 'text-white hover:text-orange'}`}
+                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold  ${location.pathname === '/Biblioteca' ? 'text-orange-600' : 'text-white hover:text-orange-600'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Biblioteca
@@ -178,7 +209,7 @@ const Menu = () => {
             <li>
               <Link
                 to="/Novedades"
-                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold  ${location.pathname === '/Novedades' ? 'text-orange' : 'text-white hover:text-orange'}`}
+                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold  ${location.pathname === '/Novedades' ? 'text-orange-600' : 'text-white hover:text-orange-600'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Novedades
@@ -187,7 +218,7 @@ const Menu = () => {
             <li>
               <Link
                 to="/nosotros"
-                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold ${location.pathname === '/nosotros' ? 'text-orange' : 'text-white hover:text-orange'}`}
+                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold ${location.pathname === '/nosotros' ? 'text-orange-600' : 'text-white hover:text-orange-600'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Nosotros
@@ -196,7 +227,7 @@ const Menu = () => {
             <li>
               <Link
                 to="/panel-administrativo"
-                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold ${location.pathname === '/panel-administrativo' ? 'text-orange' : 'text-white hover:text-orange'}`}
+                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold ${location.pathname === '/panel-administrativo' ? 'text-orange-600' : 'text-white hover:text-orange-600'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Panel Administrativo

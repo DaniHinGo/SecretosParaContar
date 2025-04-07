@@ -4,12 +4,15 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useSearchParams,
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
+import { useState, useEffect } from 'react';
 
 import "./tailwind.css";
 import Menu from "./components/menu";
 import Footer from "./components/Footer";
+import Modal from './components/Modal';
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -52,6 +55,19 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function Root() {
+  const [searchParams] = useSearchParams();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalView, setModalView] = useState<'login' | 'register' | 'contact'>('login');
+
+  // Verificar si hay un parámetro modal en la URL
+  useEffect(() => {
+    const modalParam = searchParams.get('modal');
+    if (modalParam === 'contact' || modalParam === 'login' || modalParam === 'register') {
+      setModalView(modalParam as 'login' | 'register' | 'contact');
+      setIsModalOpen(true);
+    }
+  }, [searchParams]);
+
   return (
     <div className="flex flex-col min-h-screen">
       <Menu />
@@ -61,6 +77,13 @@ export default function Root() {
       </main>
 
       <Footer /> {/* Footer fijo en todas las páginas */}
+
+      {/* Modal unificado */}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        initialView={modalView}
+      />
     </div>
   );
 }
