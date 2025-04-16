@@ -1,31 +1,73 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from '@remix-run/react';
 
 interface LoginProps {
   onClose: () => void;
 }
 
 const Login: React.FC<LoginProps> = ({ onClose }) => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
-    password: ''
+    password: '',
   });
+  const [error, setError] = useState<string | null>(null); // Estado para manejar errores
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Aquí irá la lógica de autenticación
-    console.log('Login data:', formData);
+    setError(null); // Limpiar errores previos
+
+    try {
+      // Enviar solicitud al backend para autenticar
+      const response = await axios.post('http://localhost:5084/api/auth/login', {
+        correo: formData.email, // Ajusta el nombre del campo según tu API
+        contraseña: formData.password, // Ajusta el nombre del campo según tu API
+      });
+
+      // Obtener el token y el rol de la respuesta
+      const { token, role } = response.data;
+
+      // Guardar el token y el rol en localStorage
+      localStorage.setItem('token', token);
+      localStorage.setItem('userRole', role);
+
+      // Cerrar el modal
+      onClose();
+
+      // Redirigir según el rol (opcional)
+      if (role === 'Admin') {
+        navigate('/panel-administrativo');
+      } else {
+        navigate('/');
+      }
+    } catch (err) {
+      // Manejar errores
+      if (axios.isAxiosError(err) && err.response) {
+        setError(err.response.data.message || 'Error al iniciar sesión. Verifica tus credenciales.');
+      } else {
+        setError('Error al conectar con el servidor. Intenta de nuevo más tarde.');
+      }
+    }
   };
 
   return (
     <div className="w-full max-w-md mx-auto p-6">
+      {/* Mostrar mensaje de error si existe */}
+      {error && (
+        <div className="mb-4 p-3 bg-red-100 text-red-700 rounded-lg">
+          {error}
+        </div>
+      )}
+
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-[#002847] mb-1">
@@ -100,4 +142,4 @@ const Login: React.FC<LoginProps> = ({ onClose }) => {
   );
 };
 
-export default Login; 
+export default Login;

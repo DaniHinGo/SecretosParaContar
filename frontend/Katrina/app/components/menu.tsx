@@ -6,8 +6,17 @@ const Menu = () => {
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Simulación de autenticación
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userRole, setUserRole] = useState<string | null>(null); // Nuevo estado para el rol
   const dropdownRef = useRef<HTMLDivElement | null>(null);
+
+  // Verificar si el usuario está autenticado y su rol al cargar el componente
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    const role = localStorage.getItem('userRole');
+    setIsLoggedIn(!!token); // Si hay token, el usuario está autenticado
+    setUserRole(role); // Guardar el rol del usuario
+  }, []);
 
   // Toggle del menú hamburguesa
   const toggleMenu = () => {
@@ -22,7 +31,7 @@ const Menu = () => {
   // Cerrar el dropdown al hacer clic fuera
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent | TouchEvent) => {
-      const target = event.target as Node | null; // Asegura que event.target es un Node
+      const target = event.target as Node | null;
       if (dropdownRef.current && target && !dropdownRef.current.contains(target)) {
         setIsDropdownOpen(false);
       }
@@ -35,9 +44,12 @@ const Menu = () => {
 
   // Función para cerrar sesión
   const handleLogout = () => {
-    setIsLoggedIn(false); // Simula cerrar sesión
-    setIsDropdownOpen(false); // Cierra el dropdown
-    navigate('/'); // Redirige al inicio
+    localStorage.removeItem('token'); // Eliminar el token
+    localStorage.removeItem('userRole'); // Eliminar el rol
+    setIsLoggedIn(false);
+    setUserRole(null);
+    setIsDropdownOpen(false);
+    navigate('/');
   };
 
   const handleOpenModal = (view: 'login' | 'register' | 'contact') => {
@@ -62,7 +74,7 @@ const Menu = () => {
 
         {/* Menú hamburguesa y ícono de perfil */}
         <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          {/* Ícono de perfil */}
+          {/* Botón de donar */}
           <button
             onClick={handleDonate}
             className="text-white bg-[#002847] hover:bg-[#002847]/90 focus:ring-4 focus:ring-[#002847] font-medium rounded-lg text-sm px-4 py-2 mr-4"
@@ -175,8 +187,6 @@ const Menu = () => {
               <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
             </svg>
           </button>
-
-          
         </div>
 
         {/* Enlaces del menú */}
@@ -200,7 +210,7 @@ const Menu = () => {
             <li>
               <Link
                 to="/Biblioteca"
-                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold  ${location.pathname === '/Biblioteca' ? 'text-orange-600' : 'text-white hover:text-orange-600'}`}
+                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold ${location.pathname === '/Biblioteca' ? 'text-orange-600' : 'text-white hover:text-orange-600'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Biblioteca
@@ -209,7 +219,7 @@ const Menu = () => {
             <li>
               <Link
                 to="/Novedades"
-                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold  ${location.pathname === '/Novedades' ? 'text-orange-600' : 'text-white hover:text-orange-600'}`}
+                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold ${location.pathname === '/Novedades' ? 'text-orange-600' : 'text-white hover:text-orange-600'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Novedades
@@ -224,15 +234,17 @@ const Menu = () => {
                 Nosotros
               </Link>
             </li>
-            <li>
-              <Link
-                to="/panel-administrativo"
-                className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold ${location.pathname === '/panel-administrativo' ? 'text-orange-600' : 'text-white hover:text-orange-600'}`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Panel Administrativo
-              </Link>
-            </li>
+            {userRole === 'Admin' && (
+              <li>
+                <Link
+                  to="/admin"
+                  className={`block py-2 px-3 rounded-sm md:p-0 font-BeVietnamPro font-bold ${location.pathname === '/panel-administrativo' ? 'text-orange-600' : 'text-white hover:text-orange-600'}`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Panel Administrativo
+                </Link>
+              </li>
+            )}
           </ul>
         </div>
       </div>

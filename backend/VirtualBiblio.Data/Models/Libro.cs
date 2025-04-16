@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace VirtualBiblio.Data.Models
 {
     public class Libro
@@ -32,5 +34,7 @@ namespace VirtualBiblio.Data.Models
         // Relación con archivo subido
         public int? ArchivoId { get; set; }
         public Archivo? Archivo { get; set; }
+        public int Descargas { get; set; } = 0;
+        public DateTime FechaSubida { get; set; } = DateTime.Now;
     }
 }

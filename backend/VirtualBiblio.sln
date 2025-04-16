@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualBiblio", "VirtualBiblio\VirtualBiblio.csproj", "{B670725E-F6BE-4163-A453-7AF72396EA66}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualBiblio.API", "VirtualBiblio.API\VirtualBiblio.API.csproj", "{B670725E-F6BE-4163-A453-7AF72396EA66}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualBiblio.Business", "VirtualBiblio.Business\VirtualBiblio.Business.csproj", "{DB36FE25-7779-4F15-BFB1-14C550C34C6D}"
 EndProject

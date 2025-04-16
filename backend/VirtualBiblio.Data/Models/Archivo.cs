@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace VirtualBiblio.Data.Models;
 
 public class Archivo

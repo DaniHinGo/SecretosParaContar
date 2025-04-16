@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization; // Para usar [Authorize]
 using Microsoft.AspNetCore.Mvc;
 using VirtualBiblio.Data.Models;
 using VirtualBiblio.Business.Services;
@@ -17,20 +18,26 @@ namespace VirtualBiblio.API.Controllers
             _service = service;
         }
 
+        // Obtener todos los usuarios (solo para administradores)
+        [Authorize(Roles = "Admin")]
         [HttpGet]
-        public async Task<IEnumerable<Usuario>> GetUsuarios()
+        public async Task<ActionResult<IEnumerable<Usuario>>> GetUsuarios()
         {
-            return await _service.GetUsuarios();
+            var usuarios = await _service.GetUsuarios();
+            return Ok(usuarios);
         }
 
+        // Obtener un usuario por ID (solo para administradores)
+        [Authorize(Roles = "Admin")]
         [HttpGet("{id}")]
         public async Task<ActionResult<Usuario>> GetUsuarioById(int id)
         {
             var usuario = await _service.GetUsuarioById(id);
             if (usuario == null) return NotFound();
-            return usuario;
+            return Ok(usuario);
         }
 
+        // Registrar un nuevo usuario (público, para permitir registro)
         [HttpPost]
         public async Task<ActionResult<Usuario>> AddUsuario(Usuario usuario)
         {
@@ -40,19 +47,43 @@ namespace VirtualBiblio.API.Controllers
             return CreatedAtAction(nameof(GetUsuarioById), new { id = usuario.Id }, usuario);
         }
 
+        // Editar un usuario (solo para administradores)
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateUsuario(int id, Usuario usuario)
+        public async Task<IActionResult> UpdateUsuario(int id, [FromBody] UsuarioEditDto usuarioDto)
         {
+            var usuario = await _service.GetUsuarioById(id);
+            if (usuario == null) return NotFound();
             if (id != usuario.Id) return BadRequest();
+
+            // Actualizar solo los campos permitidos
+            usuario.Nombre = usuarioDto.Username ?? usuario.Nombre;
+            usuario.Correo= usuarioDto.Correo ?? usuario.Correo;
+            usuario.Rol = usuarioDto.Role ?? usuario.Rol;
+
             await _service.UpdateUsuario(usuario);
             return NoContent();
         }
 
+        // Desactivar un usuario (solo para administradores)
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteUsuario(int id)
+        public async Task<IActionResult> DeactivateUsuario(int id)
         {
-            await _service.DeleteUsuario(id);
+            var usuario = await _service.GetUsuarioById(id);
+            if (usuario == null) return NotFound();
+
+            usuario.IsActive = false; // Desactivar en lugar de eliminar
+            await _service.UpdateUsuario(usuario);
             return NoContent();
         }
+    }
+
+    // DTO para la edición de usuarios
+    public class UsuarioEditDto
+    {
+        public string Username { get; set; }
+        public string Correo { get; set; }
+        public string Role { get; set; }
     }
 }

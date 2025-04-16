@@ -1,34 +1,35 @@
 import { useState } from 'react';
 import { useNavigate } from '@remix-run/react';
+import axios from 'axios';
 
 const Footer = () => {
     const [email, setEmail] = useState('');
     const [showSuccess, setShowSuccess] = useState(false);
+    const [showError, setShowError] = useState<string | null>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const currentYear = new Date().getFullYear();
     const navigate = useNavigate();
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!email) return;
-        
+
         setIsSubmitting(true);
-        
-        // Simulamos el envío del formulario
-        setTimeout(() => {
+        setShowError(null);
+
+        try {
+            await axios.post('http://localhost:5000/api/newsletter/subscribe', { email });
             setShowSuccess(true);
             setEmail('');
+            setTimeout(() => setShowSuccess(false), 3000);
+        } catch (err) {
+            setShowError('Error al suscribirte. Intenta de nuevo más tarde.');
+        } finally {
             setIsSubmitting(false);
-            
-            // Ocultamos el mensaje de éxito después de 3 segundos
-            setTimeout(() => {
-                setShowSuccess(false);
-            }, 3000);
-        }, 1000);
+        }
     };
 
     const handleContactClick = () => {
-        // Navegamos a la página principal y abrimos el modal de contacto
         navigate('/?modal=contact');
     };
 
@@ -36,14 +37,12 @@ const Footer = () => {
         <footer className="bg-[#F43F20] text-white">
             <div className="container mx-auto px-4 py-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {/* Columna 1: Logo y descripción */}
                     <div className="space-y-4">
                         <div className="border border-white inline-block px-4 py-2">
                             <img src="/images/logocua.png" alt="Logo" className="w-48" />
                         </div>
                         <p className="max-w-md">
-                            Fundación dedicada a promover la educación y la lectura en comunidades rurales de Colombia, facilitando el
-                            acceso a materiales educativos de calidad.
+                            Fundación dedicada a promover la educación y la lectura en comunidades rurales de Colombia, facilitando el acceso a materiales educativos de calidad.
                         </p>
                         <div className="flex space-x-7">
                             <a href="https://www.instagram.com/secretosparacontar/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
@@ -63,8 +62,6 @@ const Footer = () => {
                             </a>
                         </div>
                     </div>
-
-                    {/* Columna 2: Enlaces importantes */}
                     <div className="flex flex-col space-y-4">
                         <h3 className="text-lg font-semibold">Enlaces Importantes</h3>
                         <ul className="space-y-2">
@@ -72,12 +69,9 @@ const Footer = () => {
                                 <a href="/terminos-condiciones" className="hover:underline">Términos y condiciones</a>
                             </li>
                             <li>
-                            <button
-                            className="hover:underline"
-                            onClick={handleContactClick}
-                            >
-                            Contáctanos
-                            </button>
+                                <button className="hover:underline" onClick={handleContactClick}>
+                                    Contáctanos
+                                </button>
                             </li>
                             <li>
                                 <a href="/nosotros" className="hover:underline">Sobre nosotros</a>
@@ -87,24 +81,21 @@ const Footer = () => {
                             </li>
                         </ul>
                     </div>
-
-                    {/* Columna 3: Suscripción */}
                     <div className="space-y-4">
                         <h3 className="text-lg font-semibold">Suscríbete a nuestro boletín</h3>
                         <p className="text-sm">Mantente enterado de nuestras novedades en el campo del lector</p>
-                        
                         <form onSubmit={handleSubmit}>
                             <div className="flex">
-                                <input 
-                                    type="email" 
-                                    placeholder="Tu correo" 
-                                    className="p-2 w-full text-black rounded-l-md focus:outline-none" 
+                                <input
+                                    type="email"
+                                    placeholder="Tu correo"
+                                    className="p-2 w-full text-black rounded-l-md focus:outline-none"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     required
                                 />
-                                <button 
-                                    type="submit" 
+                                <button
+                                    type="submit"
                                     className="bg-white text-[#F43F20] px-4 py-2 rounded-r-md font-medium hover:bg-gray-100 transition-colors"
                                     disabled={isSubmitting}
                                 >
@@ -115,19 +106,22 @@ const Footer = () => {
                                     )}
                                 </button>
                             </div>
-                            
                             {showSuccess && (
                                 <div className="mt-2 text-sm bg-green-500 text-white p-2 rounded-md flex items-center">
                                     <i className="fas fa-check-circle mr-2"></i>
                                     ¡Gracias por suscribirte a nuestro boletín!
                                 </div>
                             )}
+                            {showError && (
+                                <div className="mt-2 text-sm bg-red-500 text-white p-2 rounded-md flex items-center">
+                                    <i className="fas fa-exclamation-circle mr-2"></i>
+                                    {showError}
+                                </div>
+                            )}
                         </form>
                     </div>
                 </div>
             </div>
-
-            {/* Copyright */}
             <div className="border-t border-white/20 py-4">
                 <div className="container mx-auto px-4 text-center text-sm">
                     <p>© {currentYear} Fundación Secretos para Contar. Todos los derechos reservados.</p>
@@ -135,7 +129,6 @@ const Footer = () => {
             </div>
         </footer>
     );
-  };
-  
-  export default Footer;
+};
 
+export default Footer;

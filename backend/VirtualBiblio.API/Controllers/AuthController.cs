@@ -4,32 +4,39 @@ using VirtualBiblio.Data.Models;
 using VirtualBiblio.Data.Models.Auth;
 using System.Threading.Tasks;
 
-namespace VirtualBiblio.API.Controllers;
-
-[Route("api/auth")]
-[ApiController]
-public class AuthController : ControllerBase
+namespace VirtualBiblio.API.Controllers
 {
-    private readonly AuthService _authService;
-
-    public AuthController(AuthService authService)
+    [Route("api/auth")]
+    [ApiController]
+    public class AuthController : ControllerBase
     {
-        _authService = authService;
-    }
+        private readonly AuthService _authService;
 
-    [HttpPost("register")]
-    public async Task<IActionResult> Register([FromBody] Usuario usuario)
-    {
-        var usuarioRegistrado = await _authService.Register(usuario);
-        return CreatedAtAction(nameof(Register), new { id = usuarioRegistrado.Id }, usuarioRegistrado);
-    }
+        public AuthController(AuthService authService)
+        {
+            _authService = authService;
+        }
 
-    [HttpPost("login")]
-    public async Task<IActionResult> Login([FromBody] LoginRequest request)
-    {
-        var token = await _authService.Login(request.Correo, request.Contraseña);
-        if (token == null) return Unauthorized(new { mensaje = "Correo o contraseña incorrectos" });
+        [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody] Usuario usuario)
+        {
+            var usuarioRegistrado = await _authService.Register(usuario);
+            return CreatedAtAction(nameof(Register), new { id = usuarioRegistrado.Id }, usuarioRegistrado);
+        }
 
-        return Ok(new { token });
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] LoginRequest request)
+        {
+            var result = await _authService.Login(request.Correo, request.Contraseña);
+            if (!result.HasValue) // Verificar si result es null
+            {
+                return Unauthorized(new { mensaje = "Correo o contraseña incorrectos" });
+            }
+
+            // Desestructurar la tupla
+            var (token, role) = result.Value;
+
+            return Ok(new { token, role });
+        }
     }
 }

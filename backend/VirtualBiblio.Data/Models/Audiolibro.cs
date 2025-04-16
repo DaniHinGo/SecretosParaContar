@@ -36,6 +36,7 @@ namespace VirtualBiblio.Data.Models
             // Relación con archivo subido
         public int? ArchivoId { get; set; }
         public Archivo? Archivo { get; set; }
-
+        public int Reproducciones { get; set; } = 0;
+        public DateTime FechaSubida { get; set; } = DateTime.Now;
     }
 }

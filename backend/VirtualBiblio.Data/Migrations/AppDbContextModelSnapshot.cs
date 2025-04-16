@@ -17,7 +17,7 @@ namespace VirtualBiblio.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.3")
+                .HasAnnotation("ProductVersion", "9.0.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -68,6 +68,9 @@ namespace VirtualBiblio.Data.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<DateTime>("FechaSubida")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<string>("Genero")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -79,6 +82,9 @@ namespace VirtualBiblio.Data.Migrations
                     b.Property<string>("Path")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<int>("Reproducciones")
+                        .HasColumnType("integer");
 
                     b.Property<int>("Tamano")
                         .HasColumnType("integer");
@@ -157,6 +163,9 @@ namespace VirtualBiblio.Data.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<int>("Descargas")
+                        .HasColumnType("integer");
+
                     b.Property<string>("Edicion")
                         .IsRequired()
                         .HasColumnType("text");
@@ -164,6 +173,9 @@ namespace VirtualBiblio.Data.Migrations
                     b.Property<string>("Editorial")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<DateTime>("FechaSubida")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Formato")
                         .IsRequired()
@@ -200,6 +212,26 @@ namespace VirtualBiblio.Data.Migrations
                     b.ToTable("Libros");
                 });
 
+            modelBuilder.Entity("VirtualBiblio.Data.Models.NewsletterSubscription", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("SubscribedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("NewsletterSubscriptions");
+                });
+
             modelBuilder.Entity("VirtualBiblio.Data.Models.Usuario", b =>
                 {
                     b.Property<int>("Id")
@@ -215,6 +247,9 @@ namespace VirtualBiblio.Data.Migrations
                     b.Property<string>("Correo")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
 
                     b.Property<string>("Nombre")
                         .IsRequired()

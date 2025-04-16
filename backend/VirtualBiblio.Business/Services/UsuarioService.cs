@@ -35,6 +35,10 @@ namespace VirtualBiblio.Business.Services
             if (await UsuarioExiste(usuario.Correo))
                 return false;
 
+            // Asignar valores por defecto
+            usuario.Rol = usuario.Rol ?? "User"; // Rol por defecto: "User"
+            usuario.IsActive = true; // Nuevo usuario activo por defecto
+
             await _repository.AddUsuario(usuario);
             return true;
         }
@@ -44,9 +48,14 @@ namespace VirtualBiblio.Business.Services
             await _repository.UpdateUsuario(usuario);
         }
 
-        public async Task DeleteUsuario(int id)
+        public async Task DeactivateUsuario(int id)
         {
-            await _repository.DeleteUsuario(id);
+            var usuario = await _repository.GetUsuarioById(id);
+            if (usuario != null)
+            {
+                usuario.IsActive = false; // Desactivar en lugar de eliminar
+                await _repository.UpdateUsuario(usuario);
+            }
         }
     }
 }
