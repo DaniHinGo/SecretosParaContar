@@ -23,5 +23,6 @@ namespace VirtualBiblio.Data.Models
         public string? Rol { get; set; } = "User"; // Por defecto, será "User"
 
         public bool IsActive { get; set; } = true; // Por defecto, el usuario estará activo
+        public string Notas { get; set; }
     }
 }

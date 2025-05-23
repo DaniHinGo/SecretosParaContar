@@ -37,12 +37,12 @@ export default function PanelAdministrativo() {
     const fetchStats = async () => {
       try {
         const token = localStorage.getItem('token');
-        const statsResponse = await axios.get('http://localhost:5000/api/stats', {
+        const statsResponse = await axios.get('http://localhost:5084/api/stats', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setStats(statsResponse.data);
 
-        const usuariosResponse = await axios.get('http://localhost:5000/api/usuario', {
+        const usuariosResponse = await axios.get('http://localhost:5084/api/usuario', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUsuarios(usuariosResponse.data);
@@ -61,7 +61,7 @@ export default function PanelAdministrativo() {
     if (!editUsuario) return;
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`http://localhost:5000/api/usuario/${editUsuario.id}`, editUsuario, {
+      await axios.put(`http://localhost:5084/api/usuario/${editUsuario.id}`, editUsuario, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUsuarios(usuarios.map(u => (u.id === editUsuario.id ? editUsuario : u)));
@@ -74,7 +74,7 @@ export default function PanelAdministrativo() {
   const handleDeactivate = async (id: number) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/api/usuario/${id}`, {
+      await axios.delete(`http://localhost:5084/api/usuario/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUsuarios(usuarios.map(u => (u.id === id ? { ...u, isActive: false } : u)));

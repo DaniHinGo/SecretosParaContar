@@ -23,7 +23,7 @@ export const links: LinksFunction = () => [
   },
   {
     rel: "stylesheet",
-    href:"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css",
+    href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css",
   },
   {
     rel: "stylesheet",
@@ -48,7 +48,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {children}
         <ScrollRestoration />
         <Scripts />
-        
       </body>
     </html>
   );
@@ -71,14 +70,10 @@ export default function Root() {
   return (
     <div className="flex flex-col min-h-screen">
       <Menu />
-      
       <main className="flex-grow">
         <Outlet /> {/* Aquí se renderizan las diferentes páginas */}
       </main>
-
       <Footer /> {/* Footer fijo en todas las páginas */}
-
-      {/* Modal unificado */}
       <Modal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}

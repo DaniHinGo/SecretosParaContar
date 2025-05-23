@@ -39,13 +39,14 @@ const Login: React.FC<LoginProps> = ({ onClose }) => {
       // Guardar el token y el rol en localStorage
       localStorage.setItem('token', token);
       localStorage.setItem('userRole', role);
+      navigate('/admin');
 
       // Cerrar el modal
       onClose();
 
       // Redirigir según el rol (opcional)
       if (role === 'Admin') {
-        navigate('/panel-administrativo');
+        navigate('/admin');
       } else {
         navigate('/');
       }

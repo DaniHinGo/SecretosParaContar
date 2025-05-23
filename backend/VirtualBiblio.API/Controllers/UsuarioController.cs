@@ -1,9 +1,10 @@
-using Microsoft.AspNetCore.Authorization; // Para usar [Authorize]
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using VirtualBiblio.Data.Models;
 using VirtualBiblio.Business.Services;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Security.Claims;
 
 namespace VirtualBiblio.API.Controllers
 {
@@ -37,6 +38,47 @@ namespace VirtualBiblio.API.Controllers
             return Ok(usuario);
         }
 
+        // Nuevo método: Obtener datos del usuario autenticado
+        [Authorize]
+        [HttpGet("me")]
+        public async Task<ActionResult<object>> GetCurrentUser()
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (string.IsNullOrEmpty(userId)) return Unauthorized();
+
+            var usuario = await _service.GetUsuarioById(int.Parse(userId));
+            if (usuario == null) return NotFound();
+
+            return Ok(new
+            {
+                nombre = usuario.Nombre,
+                correo = usuario.Correo,
+                librosLeidos = 0, // Agrega lógica real si tienes esta métrica
+                audiolibrosEscuchados = 0, // Agrega lógica real si tienes esta métrica
+                notas = usuario.Notas ?? "",
+                logros = new[] // Ejemplo de logros (puedes conectar con una tabla de logros)
+                {
+                    new { id = 1, nombre = "Explorador", descripcion = "Leíste 3 libros", ganado = true }
+                }
+            });
+        }
+
+        // Nuevo método: Actualizar notas del usuario autenticado
+        [Authorize]
+        [HttpPut("notas")]
+        public async Task<IActionResult> UpdateNotas([FromBody] UpdateNotasDto notasDto)
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (string.IsNullOrEmpty(userId)) return Unauthorized();
+
+            var usuario = await _service.GetUsuarioById(int.Parse(userId));
+            if (usuario == null) return NotFound();
+
+            usuario.Notas = notasDto.Notas;
+            await _service.UpdateUsuario(usuario);
+            return NoContent();
+        }
+
         // Registrar un nuevo usuario (público, para permitir registro)
         [HttpPost]
         public async Task<ActionResult<Usuario>> AddUsuario(Usuario usuario)
@@ -56,9 +98,8 @@ namespace VirtualBiblio.API.Controllers
             if (usuario == null) return NotFound();
             if (id != usuario.Id) return BadRequest();
 
-            // Actualizar solo los campos permitidos
             usuario.Nombre = usuarioDto.Username ?? usuario.Nombre;
-            usuario.Correo= usuarioDto.Correo ?? usuario.Correo;
+            usuario.Correo = usuarioDto.Correo ?? usuario.Correo;
             usuario.Rol = usuarioDto.Role ?? usuario.Rol;
 
             await _service.UpdateUsuario(usuario);
@@ -73,7 +114,7 @@ namespace VirtualBiblio.API.Controllers
             var usuario = await _service.GetUsuarioById(id);
             if (usuario == null) return NotFound();
 
-            usuario.IsActive = false; // Desactivar en lugar de eliminar
+            usuario.IsActive = false;
             await _service.UpdateUsuario(usuario);
             return NoContent();
         }
@@ -85,5 +126,11 @@ namespace VirtualBiblio.API.Controllers
         public string Username { get; set; }
         public string Correo { get; set; }
         public string Role { get; set; }
+    }
+
+    // DTO para actualizar notas
+    public class UpdateNotasDto
+    {
+        public string Notas { get; set; }
     }
 }
