@@ -1,0 +1,91 @@
+* [33mdff0c353[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mDev[m[33m, [m[1;31morigin/Dev[m[33m, [m[1;31morigin/Admin[m[33m, [m[1;32mAdmin[m[33m)[m cambios admin
+* [33mef651de7[m Admin
+* [33m707d0e57[m readme documentacion del proyecto por validcar  y usaurio github de santiago
+* [33m2d90e64b[m modificaicon front mejoras web y creacion modales por formularios 06/04/2025
+*   [33m0011a09e[m ajuste y mejora footer2
+[32m|[m[33m\[m  
+[32m|[m * [33m075af21d[m archivo faltante del loguin
+[32m|[m *   [33m5455096f[m Merge branch 'Dev' of https://github.com/DaniHinGo/SecretosParaContar into Dev
+[32m|[m [34m|[m[35m\[m  
+[32m|[m * [35m|[m [33mceb6953c[m visibilidad de inciar seccion
+[32m|[m * [35m|[m [33m346a9c16[m ajuste y mejora viasul de componentes footer y menu
+[32m|[m * [35m|[m [33maa6345e6[m modal loguin y registro archivos - react-hook-form@7.55.0
+[32m|[m * [35m|[m [33m7b160386[m por corregir panela administratvo
+* [35m|[m [35m|[m [33m7a5c305c[m ajustes y mejoras footer
+[35m|[m [35m|[m[35m/[m  
+[35m|[m[35m/[m[35m|[m   
+* [35m|[m [33m263a54db[m Conexion Api Libros
+[35m|[m[35m/[m  
+*   [33m6c384a74[m Merge branch 'Dev' of https://github.com/DaniHinGo/SecretosParaContar into Dev
+[36m|[m[1;31m\[m  
+[36m|[m * [33m6858c00c[m actualizacion
+* [1;31m|[m [33m96c9fffa[m Creacion Roles y Login
+[1;31m|[m[1;31m/[m  
+* [33m0d81e775[m Ajustes Merge
+* [33m4a7e4454[m Resolve nullable warnings, update migrations, and remove unused ApplicationDbContext
+* [33mdbcfaf7f[m Remove generated files in bin/ and update project files
+* [33m44c86f8f[m Remove generated files from version control and update .gitignore
+*   [33mf944c741[m Merge branch 'development' into Dev
+[1;32m|[m[1;33m\[m  
+[1;32m|[m * [33mb2e6e672[m[33m ([m[1;32mdevelopment[m[33m)[m Renombrar carpeta backend/VirtualBiblio a backend/VirtualBiblio.API y actualizar referencias
+[1;32m|[m * [33m65e1f822[m Renombrar carpeta backend/VirtualBiblio a backend/VirtualBiblio.API y actualizar referencias
+[1;32m|[m * [33m00e7a0af[m Eliminar archivos generados en obj/ del control de versiones
+[1;32m|[m * [33m626bca1f[m[33m ([m[1;31morigin/development[m[33m)[m cambios
+[1;32m|[m * [33mb93f4188[m Eliminar archivos generados en backend/virtualBiblio/obj/ del control de versiones
+[1;32m|[m * [33m3d69f1e7[m Actualizar .gitignore para ignorar archivos generados
+[1;32m|[m * [33m52e45c64[m Eliminar archivos generados en backend/VirtualBiblio/obj/ del control de versiones
+[1;32m|[m * [33mc7504d8e[m Actualizar .gitignore para ignorar obj/
+[1;32m|[m * [33m76761512[m unificando
+[1;32m|[m * [33m37f7db73[m Eliminar archivos generados en obj/ del control de versiones
+[1;32m|[m * [33mc418554f[m Traer los cambios del frontend desde feature/biblioteca a dev
+[1;32m|[m * [33m4cb119d1[m Sincronización
+[1;32m|[m * [33macb748c3[m propando API
+[1;32m|[m * [33m99e82718[m Módulo Autores
+[1;32m|[m * [33m0d92b59b[m Módulo Autores
+[1;32m|[m * [33mdddccf2b[m Resolviendo compflictos
+* [1;33m|[m   [33m66017224[m Merge branch 'Dev' of https://github.com/DaniHinGo/SecretosParaContar into Dev
+[1;34m|[m[1;35m\[m [1;33m\[m  
+[1;34m|[m * [1;33m|[m [33m1c9ace51[m Modulo Admin(Subir Archivos)
+[1;34m|[m * [1;33m|[m [33m5b059aae[m Ajuste Creacion Libros
+[1;34m|[m * [1;33m|[m [33m1a1886a8[m Creacion Modulo Libros
+[1;34m|[m * [1;33m|[m [33m30d30fbc[m Cambios Usuarios
+[1;34m|[m * [1;33m|[m [33m67999270[m cambios y ajustes santiago
+[1;34m|[m * [1;33m|[m [33m11a8e00b[m imagenes y logos nuevos y de libros
+[1;34m|[m * [1;33m|[m   [33m5554bb02[m Merge branch 'feature/biblioteca' of github.com:DaniHinGo/SecretosParaContar into Dev
+[1;34m|[m [1;36m|[m[31m\[m [1;33m\[m  
+[1;34m|[m [1;36m|[m * [1;33m|[m [33m5b4649aa[m ajustes rama  feeature/biblioteca
+[1;34m|[m [1;36m|[m * [1;33m|[m [33m95ef34cb[m cambios bajados de rama feature/biblioteca
+[1;34m|[m [1;36m|[m * [1;33m|[m [33mfc1f6601[m actualización
+[1;34m|[m [1;36m|[m * [1;33m|[m [33m41d6f55f[m nosotros
+[1;34m|[m [1;36m|[m * [1;33m|[m [33m9a86b608[m nosotros
+[1;34m|[m [1;36m|[m * [1;33m|[m [33m16faed06[m Novedades
+[1;34m|[m [1;36m|[m * [1;33m|[m [33m280e976b[m Index y biblioteca
+[1;34m|[m [1;36m|[m * [1;33m|[m [33m01d29ae7[m Limpiando archivos innecesarios
+[1;34m|[m [1;36m|[m * [1;33m|[m [33mc9d218f1[m creación index y biblioteca
+[1;34m|[m [1;36m|[m [1;33m|[m[1;33m/[m  
+* [1;36m|[m [1;33m/[m [33m78c703d0[m Eliminar archivos generados en obj/ y bin/ del control de versiones
+[1;36m|[m[1;36m/[m [1;33m/[m  
+* [1;33m|[m [33maf67b3f2[m ajustes rama  feeature/biblioteca a Dev
+* [1;33m|[m [33m80226479[m ajustes para rama Dev
+* [1;33m|[m [33m19c85963[m Ajustes de cambios pendientes
+* [1;33m|[m [33mf1fef266[m cambios santiago a Dev
+* [1;33m|[m [33m9218485c[m ModuloAudiolibros
+* [1;33m|[m [33m7d494961[m Guardar cambios locales antes del merge
+* [1;33m|[m [33m47e53122[m feat: update Footer component with responsive design and current year
+* [1;33m|[m   [33m876bff92[m Merge branch 'Dev' of github.com:DaniHinGo/SecretosParaContar into Dev
+[32m|[m[33m\[m [1;33m\[m  
+[32m|[m * [1;33m|[m [33m42a85765[m ConnectionDbPrueba
+[32m|[m [1;33m|[m[1;33m/[m  
+* [1;33m/[m [33ma9eb8ca0[m Footer v1 mejoras pendientes
+[1;33m|[m[1;33m/[m  
+* [33mc020c59d[m mejora uno menu movil
+* [33m7c24ab20[m menu responsive
+* [33m8952d821[m menu desktop
+* [33mdb900398[m cambio a remix
+* [33mb3ce0347[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m duplicado
+* [33m59da247f[m duplicado
+* [33m99c6455e[m estructura
+* [33mdf338a8c[m backend
+* [33m891cbfc4[m back y front
+* [33me3756150[m creación de proyecto
+* [33mc993e9b9[m Initial commit
