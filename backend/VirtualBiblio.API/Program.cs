@@ -9,10 +9,12 @@ using VirtualBiblio.Business.Services;
 using VirtualBiblio.Business.Interfaces;
 using VirtualBiblio.Data.Repositories;
 using Microsoft.Extensions.FileProviders;
+using VirtualBiblio.Data.Models;
 
+// Crea el builder de la aplicación
 var builder = WebApplication.CreateBuilder(args);
 
-//  Agregar la conexión a PostgreSQL
+// Agregar la conexión a PostgreSQL
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(
         builder.Configuration.GetConnectionString("PostgresConnection"),
@@ -37,7 +39,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
-//  Registrar servicios y repositorios
+// Registrar servicios y repositorios
 builder.Services.AddScoped<AudiolibroService>();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<UsuarioService>();
@@ -47,7 +49,7 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IAuthorService, AuthorService>();
 builder.Services.AddScoped<AuthService>();
 
-//  Configurar controladores y Swagger
+// Configurar controladores y Swagger
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -75,22 +77,59 @@ builder.Services.AddCors(options =>
     });
 });
 
+// Construye la aplicación
 var app = builder.Build();
+
+// Seeder de datos
+using (var scope = app.Services.CreateScope())
+{
+    try
+    {
+        var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+        if (!context.Libros.Any())
+        {
+            context.Libros.Add(new Libro
+            {
+                Titulo = "Cuentos y pasatiempos_Secretos para contar",
+                Portada = "Cuentosypasatiempos.jpg",
+                Path = "Cuentos y pasatiempos_Secretos para contar.pdf",
+                ISBN13 = "9781234567890",
+                Editorial = "Editorial Ejemplo",
+                AnioPublicacion = 2023,
+                Formato = "PDF",
+                Genero = "Cuento",
+                Idioma = "Español",
+                Edicion = "1ª",
+                ContraPortada = "Descripción...",
+                Descargas = 0,
+                FechaSubida = DateTime.UtcNow
+            });
+            context.SaveChanges();
+            Console.WriteLine("Seeder: Libro insertado exitosamente.");
+        }
+        else
+        {
+            Console.WriteLine("Seeder: La tabla Libros ya contiene datos.");
+        }
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Seeder: Error al insertar datos: {ex.Message}");
+    }
+}
 
 // Habilitar archivos estáticos para acceder a los libros
 var librosPath = Path.Combine(Directory.GetCurrentDirectory(), "ArchivosSubidos");
 if (!Directory.Exists(librosPath))
     Directory.CreateDirectory(librosPath);
 
-app.UseCors();
-
 app.UseStaticFiles(new StaticFileOptions
 {
-    FileProvider = new PhysicalFileProvider(librosPath),
+    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "ArchivosSubidos")),
     RequestPath = "/ArchivosSubidos"
 });
 
-//  Configuración del middleware
+// Configuración del middleware
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -98,12 +137,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseRouting(); 
+app.UseCors();    
 app.UseAuthentication();
 app.UseAuthorization();
-app.MapControllers();
-app.UseRouting();
-app.UseAuthentication();
-app.UseAuthorization();
-app.MapControllers();
+app.MapControllers(); 
 
 app.Run();

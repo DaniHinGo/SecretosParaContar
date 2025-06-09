@@ -145,6 +145,66 @@ namespace VirtualBiblio.Data.Migrations
                     b.ToTable("Authors");
                 });
 
+            modelBuilder.Entity("VirtualBiblio.Data.Models.Configuracion", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Idioma")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<bool>("Notificaciones")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Tema")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Configuraciones");
+                });
+
+            modelBuilder.Entity("VirtualBiblio.Data.Models.Historial", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Duracion")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Tipo")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Titulo")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("Historial");
+                });
+
             modelBuilder.Entity("VirtualBiblio.Data.Models.Libro", b =>
                 {
                     b.Property<int>("Id")
@@ -161,49 +221,59 @@ namespace VirtualBiblio.Data.Migrations
 
                     b.Property<string>("ContraPortada")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(1000)
+                        .HasColumnType("character varying(1000)");
 
                     b.Property<int>("Descargas")
                         .HasColumnType("integer");
 
                     b.Property<string>("Edicion")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.Property<string>("Editorial")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
 
                     b.Property<DateTime>("FechaSubida")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Formato")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.Property<string>("Genero")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.Property<string>("ISBN13")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(13)
+                        .HasColumnType("character varying(13)");
 
                     b.Property<string>("Idioma")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.Property<string>("Path")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
 
                     b.Property<string>("Portada")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
 
                     b.Property<string>("Titulo")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
 
                     b.HasKey("Id");
 
@@ -256,6 +326,10 @@ namespace VirtualBiblio.Data.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 
+                    b.Property<string>("Notas")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("Rol")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -273,6 +347,17 @@ namespace VirtualBiblio.Data.Migrations
                         .HasForeignKey("ArchivoId");
 
                     b.Navigation("Archivo");
+                });
+
+            modelBuilder.Entity("VirtualBiblio.Data.Models.Historial", b =>
+                {
+                    b.HasOne("VirtualBiblio.Data.Models.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("VirtualBiblio.Data.Models.Libro", b =>

@@ -14,7 +14,7 @@ namespace VirtualBiblio.Data
         public DbSet<Audiolibro> Audiolibros { get; set; }
         public DbSet<Author> Authors { get; set; }
         public DbSet<Libro> Libros { get; set; }
-        public DbSet<Archivo> Archivo { get; set; }
+        public DbSet<Archivo> Archivos { get; set; }
         public DbSet<Historial> Historial { get; set; }
         public DbSet<Configuracion> Configuraciones { get; set; }
     }
